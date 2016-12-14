@@ -1,0 +1,6 @@
+[08-Sep-2011 20:22:57] PHP Warning:  imagejpeg(): supplied argument is not a valid Image resource in /home/thanhmai/public_html/resize/mthumb.php on line 40
+[08-Sep-2011 20:22:57] PHP Warning:  imagedestroy(): supplied argument is not a valid Image resource in /home/thanhmai/public_html/resize/mthumb.php on line 41
+[11-Sep-2011 19:09:59] PHP Warning:  getimagesize() [<a href='function.getimagesize'>function.getimagesize</a>]: Couldn't resolve host name in /home/thanhmai/public_html/resize/mthumb.php on line 10
+[11-Sep-2011 19:09:59] PHP Warning:  getimagesize(http://http://vn.360plus.yahoo.com/cothonnu_xinhdep2000/photo?pid=292&amp;fid=2) [<a href='function.getimagesize'>function.getimagesize</a>]: failed to open stream: operation failed in /home/thanhmai/public_html/resize/mthumb.php on line 10
+[11-Sep-2011 19:09:59] PHP Warning:  imagejpeg(): supplied argument is not a valid Image resource in /home/thanhmai/public_html/resize/mthumb.php on line 40
+[11-Sep-2011 19:09:59] PHP Warning:  imagedestroy(): supplied argument is not a valid Image resource in /home/thanhmai/public_html/resize/mthumb.php on line 41

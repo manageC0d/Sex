@@ -1,0 +1,192 @@
+                                html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, abbr, address, cite, code, del, dfn, em, img, ins, kbd, q, samp, small, strong, sub, sup, var, b, i, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary, time, mark, audio, video {
+	border : 0;
+	outline : 0;
+	font-size : 100%;
+	vertical-align : baseline;
+	background : transparent;
+	margin : 0;
+	padding : 0;
+}
+body {
+	line-height : 1;
+	overflow: hidden;
+	-webkit-touch-callout: none;
+	-webkit-user-select: none; 
+	-moz-user-select: none;    
+	-ms-user-select: none;     
+	-o-user-select: none;
+	user-select: none;
+}
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+	display : block;
+}
+nav ul {
+	list-style : none;
+}
+blockquote, q {
+	quotes : none;
+}
+blockquote:before, blockquote:after, q:before, q:after {
+	content : none;
+}
+a {
+	font-size : 100%;
+	vertical-align : baseline;
+	background : transparent;
+	margin : 0;
+	padding : 0;
+	text-decoration: none;
+}
+ins {
+	background-color : #ff9;
+	color : #000;
+	text-decoration : none;
+}
+mark {
+	background-color : #ff9;
+	color : #000;
+	font-style : italic;
+	font-weight : 700;
+}
+del {
+	text-decoration : line-through;
+}
+abbr[title], dfn[title] {
+	border-bottom : 1px dotted;
+	cursor : help;
+}
+table {
+	border-collapse : collapse;
+	border-spacing : 0;
+}
+hr {
+	display : block;
+	height : 1px;
+	border : 0;
+	border-top : 1px solid #ccc;
+	margin : 1em 0;
+	padding : 0;
+}
+input, select {
+	vertical-align : middle;
+}
+body {
+	background : #317E96;
+}
+article#cloud {
+	background : url(../images/cloud.png) repeat-x;
+	height : 425px;
+	z-index : 2;
+}
+article#cloud > p {
+	font-family : 'Open Sa;ns', sans-serif;
+	font-size : 60px;
+	font-weight : bold;
+	padding-top : 60px;
+	z-index : 3;
+	text-shadow : -2px 3px 12px #000000;
+	text-align : center;
+}
+section#birds-1 {
+	background : url(../index.html) no-repeat;
+	width : 194px;
+	height : 156px;
+	position : absolute;
+	cursor : pointer;
+}
+section#birds-1 p, section#birds-3 p {
+	padding : 3px 5px;
+	font-size : 16px;
+	border-radius : 3px;
+	background : #fff;
+	opacity : 0;
+	transition : all 0.5s;
+}
+section#birds-1:hover p, section#birds-3:hover p {
+	opacity : 1;
+	transition : all 0.5s;
+}
+section#birds-2 {
+	background : url(../index.html) no-repeat;
+	width : 97px;
+	height : 78px;
+	margin-left : 400px;
+	position : absolute;
+}
+section#birds-3 {
+	background : url(../index.html) no-repeat;
+	width : 276px;
+	height : 221px;
+	margin-left : 250px;
+	margin-top : 20%;
+	position : absolute;
+	cursor : pointer;
+}
+article#content {
+	position : absolute;
+	z-index : 1;
+	width : 100%;
+	height : auto;
+	top : 60%;
+	color : #6abdc5;
+	text-align : right;
+	text-transform : uppercase;
+}
+article#content h1 {
+	font-size : 100px;
+	margin-right : 50px;
+	text-shadow : 2px 2px 0 #FFF;
+}
+article#content h2 {
+	font-size : 40px;
+	font-weight : normal;
+	margin-right : 50px;
+	text-shadow : 1px 1px 0 #FFF;
+}
+article#content h3 a {
+	color : #6abdc5;
+	font-size : 15px;
+	text-transform : none;
+	text-shadow : 1px 1px 0 #FFF;
+	margin-right : 50px;
+	text-decoration : none;
+}
+footer {
+	background : url(../images/city.png) top repeat-x;
+	width : 100%;
+	height : 535px;
+	position : absolute;
+	bottom : 0;
+	overflow : hidden;
+	z-index : 1;
+}
+#duong, #duongtext {
+	height : 206px;
+	width : 100%;
+	position : absolute;
+	bottom : 0;
+	z-index : 3;
+}
+#duong {
+	background : #342a2a;
+}
+#duongtext {
+	z-index : 5;
+}
+#duongtext p {
+	font-family : 'Open Sa;ns', sans-serif;
+	padding : 20px;
+	text-align : right;
+	color : #fff;
+	line-height : 20px;
+}
+#dapxe {
+	z-index : 4;
+	position : absolute;
+	bottom : 0;
+	margin : 0 auto;
+	width : 100%;
+	text-align : center;
+	
+}
+body {background:url('http://1.bp.blogspot.com/-TBGqka33pt8/UzsBjJau3BI/AAAAAAAAOBM/-GOF_49AEis/s0/YouTube-Logo-Widescreen-Wallpaper.jpg')no-repeat fixed center center;-webkit-transition: all 1.0s ease;-moz-transition: all 1.0s ease;transition: all 1.0s ease;}

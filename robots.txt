@@ -1,0 +1,3 @@
+﻿User-agent: *
+Sitemap: http://xn--bt-5ja.vn/sitemap.xml
+Sitemap: http://xn--bt-5ja.vn/ror.xml

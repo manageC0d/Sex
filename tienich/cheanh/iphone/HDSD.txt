@@ -1,0 +1,7 @@
+﻿Hướng dẫn sử dụng trước khi dùng:
+Các bạn download code về giải nén, upload lên host.
+Chmod thư mục temp về 777
+Mở file config.php để sửa lại đường dẫn chứa ảnh và ảnh đóng dấu (không bắt buộc)
+
+
+Nguồn copy: phuoctrungld - DDVN.ME !!!

@@ -1,0 +1,1 @@
+<div class="border"><a href="http://taojava.net">Back</a> | <a href="http://facebook.com/sharer/sharer.php?u=http://taojava.net/tool">Facebook</a></div><div class="footer">(c) 2011 hack4you</div></body></html>

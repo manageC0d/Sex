@@ -1,0 +1,4 @@
+[13-Sep-2011 07:43:46] PHP Warning:  include(../head.php) [<a href='function.include'>function.include</a>]: failed to open stream: No such file or directory in /home/u286520131/public_html/maydotinhyeu/index.php on line 5
+[13-Sep-2011 07:43:46] PHP Warning:  include() [<a href='function.include'>function.include</a>]: Failed opening '../head.php' for inclusion (include_path='.:/usr/lib/php:/usr/local/lib/php') in /home/u286520131/public_html/maydotinhyeu/index.php on line 5
+[13-Sep-2011 07:43:46] PHP Warning:  include(../foot.php) [<a href='function.include'>function.include</a>]: failed to open stream: No such file or directory in /home/u286520131/public_html/maydotinhyeu/index.php on line 20
+[13-Sep-2011 07:43:46] PHP Warning:  include() [<a href='function.include'>function.include</a>]: Failed opening '../foot.php' for inclusion (include_path='.:/usr/lib/php:/usr/local/lib/php') in /home/u286520131/public_html/maydotinhyeu/index.php on line 20

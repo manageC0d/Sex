@@ -1,0 +1,195 @@
+html {
+  height: 120%;
+}
+body {
+  margin: 0;
+  position: relative;
+  height: 100%;
+}
+.widget-title {
+    margin-bottom: 15px;
+    color: #fff;
+    font-size: 1.6em;
+}
+button.eager-back-to-top-button[show="true"] {
+    pointer-events: all;
+    opacity: 1;
+}
+button.eager-back-to-top-button {
+    text-rendering: optimizeLegibility;
+    -webkit-tap-highlight-color: transparent;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+    -webkit-appearance: none;
+    appearance: none;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antaliased;
+    display: block;
+    cursor: pointer;
+    border: 0;
+    padding: 0;
+    margin: 0;
+    position: fixed;
+    height: 75px;
+    width: 75px;
+    bottom: 25px;
+    right: 25px;
+    font-size: 40px;
+    line-height: 75px;
+    border-radius: 5px;
+    background: #ccc;
+    background-color: rgba(0, 0, 0, .1);
+    border: 0;
+    outline: none;
+    cursor: pointer;
+    font-family: sans-serif;
+    font-weight: normal;
+    font-style: normal;
+    text-decoration: none;
+    letter-spacing: 0;
+    text-align: center;
+    opacity: 0;
+    -webkit-transition: opacity .3s ease-in-out;
+    -moz-transition: opacity .3s ease-in-out;
+    transition: opacity .3s ease-in-out;
+    pointer-events: none;
+    z-index: 7000;
+}
+
+#site-bottom{margin-top:40px;padding:25px 0 30px;border-top:1px solid #555;font-size:0.9em}
+#site-bottom .bottom-left{
+text-align:center;
+margin-bottom:20px}
+#site-bottom .backtotop{margin-left:5px}
+#site-bottom ul li{float:left;margin-right:15px;list-style:none}
+#site-bottom a{color:#ccc}
+@media (max-width: 680px){
+  img.img-bia {
+    height: 340px!important;
+    width: 680px!important;
+}
+}
+@media (min-width: 320px){
+	#lg{
+		padding-bottom: 18px;
+	}
+#site-bottom ul li{
+	display:inline-block;float:none}
+	}
+@media (min-width: 992px){
+	#site-bottom .bottom-left{
+		text-align:left;margin-bottom:0}
+	}
+@media (max-width: 418px){
+.top {
+padding-top: 50px;
+}
+}
+@media (min-width: 320px){
+#site-bottom .bottom-right{text-align:center}}
+@media (min-width: 992px){
+
+#site-bottom .bottom-right{text-align:right;float:right}}
+
+footer {
+margin: 5em 0;
+}
+
+.sot {
+   color: #fff;
+   margin-bottom: 9px;
+}
+.tron {
+    color: #333333;
+    border-radius: 4px;
+    background: #fff;
+}    
+}
+.clearfix {
+    clear: both;
+}
+
+footer li {
+margin-right: 1.5em;
+margin-bottom: 1.5em;
+}
+ul.list-unstyled li{ 
+display: inline; 
+}
+#myCarousel{
+margin-top: 50px;
+margin-bottom: 60px;
+height: 300px;
+}
+.container1 {
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+    color: #fff;
+}
+.chapter-content{
+position: absolute;
+text-align: center;
+width:100%;
+top: 80px;
+}
+.chapter-img{
+max-width:100%; 
+border: 2px solid;
+border-color: #000;
+}
+#cover-search{
+width: 400px;
+position: absolute;
+bottom: 50px;
+right: 50px;
+}
+.navbar .nav .divider-vertical{
+     background-color:blue;
+     height:10px;    
+ }
+.manga-2{
+	background: url('../images/manga_open.png') left center no-repeat;
+	padding: 4px 5px 4px 23px;
+}
+.manga-1{
+	background: url('../images/manga_close.png') left center no-repeat;
+	padding: 4px 5px 4px 23px;
+}
+.blur{
+	padding: 4px 5px 4px 23px;
+}
+.img {
+    max-width: 100%;
+    height: auto;
+}
+.popover {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1010;
+  display: none;
+  max-width: 800px !important;
+  padding: 1px;
+  text-align: left;
+  white-space: normal;
+  background-color: #ffffff;
+  border: 1px solid #ccc;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  -webkit-border-radius: 6px;
+     -moz-border-radius: 6px;
+          border-radius: 6px;
+  -webkit-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+     -moz-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+          box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+  -webkit-background-clip: padding-box;
+     -moz-background-clip: padding;
+          background-clip: padding-box;
+}
+        ::-webkit-scrollbar {width: 6px; height:6px;}
+        ::-webkit-scrollbar-track {-webkit-box-shadow: inset 0 0 4px rgba(0,0,0,0.3);background:#fff;}
+        ::-webkit-scrollbar-thumb {background: rgba(186,35,35,0.8);-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5);}
+        ::-webkit-scrollbar-thumb:window-inactive {background: rgba(186,35,35,0.4);
+        -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5);    }

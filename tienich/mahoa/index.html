@@ -1,0 +1,163 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>HTML Encryption Methods</title>
+</head>
+
+<body>
+
+<script language="JavaScript" type="text/javascript">
+<!--
+
+function escapeAll(input) {
+  var output = "";
+  var escapeCode;
+
+  for (i = 0; i < input.length; i++) {
+    escapeCode = escape(input[i]);
+    if (escapeCode.length == 1) {
+      escapeCode = input.charCodeAt(i).toString(16).toUpperCase();
+      if (escapeCode.length < 2) escapeCode = "0" + escapeCode;
+      escapeCode = "%" + escapeCode;
+    }
+    output += escapeCode;
+  }
+
+  return output;
+}
+
+  function rot13(input) {
+   return input.replace(/[a-zA-Z]/g,
+      function(ch) {
+        return String.fromCharCode((ch <= "Z" ? 90 : 122) >=
+          (ch = ch.charCodeAt(0) + 13) ? ch : ch - 26);
+      });
+  }
+
+  var base64 = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdef" +
+    "ghijklmnopqrstuvwxyz0123456789+/=";
+
+  function encode64(input) {
+    var output = "";
+    var ch1, ch2, ch3, enc1, enc2, enc3, enc4;
+    var i = 0;
+
+    do {
+      ch1 = input.charCodeAt(i++);
+      ch2 = input.charCodeAt(i++);
+      ch3 = input.charCodeAt(i++);
+
+      enc1 = ch1 >> 2;
+      enc2 = ((ch1 & 3) << 4) | (ch2 >> 4);
+      enc3 = ((ch2 & 15) << 2) | (ch3 >> 6);
+      enc4 = ch3 & 63;
+
+      if (isNaN(ch2)) {
+        enc3 = enc4 = 64;
+      } else if (isNaN(ch3)) {
+        enc4 = 64;
+      }
+
+      output = output + base64.charAt(enc1) +  base64.charAt(enc2) +
+        base64.charAt(enc3) + base64.charAt(enc4);
+      ch1 = ch2 = ch3 = "";
+      enc1 = enc2 = enc3 = enc4 = "";
+    } while (i < input.length);
+
+    return output;
+  }
+
+  function decode64(input) {
+    var output = "";
+    var ch1, ch2, ch3, enc1, enc2, enc3, enc4;
+    var i = 0;
+
+    input = input.replace(/[^A-Za-z0-9\+\/\=]/g, "");
+    do {
+      enc1 = base64.indexOf(input.charAt(i++));
+      enc2 = base64.indexOf(input.charAt(i++));
+      enc3 = base64.indexOf(input.charAt(i++));
+      enc4 = base64.indexOf(input.charAt(i++));
+
+      ch1 = (enc1 << 2) | (enc2 >> 4);
+      ch2 = ((enc2 & 15) << 4) | (enc3 >> 2);
+      ch3 = ((enc3 & 3) << 6) | enc4;
+
+      output = output + String.fromCharCode(ch1);
+
+      if (enc3 != 64) output = output + String.fromCharCode(ch2);
+      if (enc4 != 64) output = output + String.fromCharCode(ch3);
+
+      ch1 = ch2 = ch3 = "";
+      enc1 = enc2 = enc3 = enc4 = "";
+
+    } while (i < input.length);
+
+    return output;
+  }
+
+  function replaceSpecialChars(input)
+  {
+    var output = input;
+    output = output.replace(/\\/g, "\\\\");
+    output = output.replace(/\r/g, "\\r");
+    output = output.replace(/\n/g, "\\n");
+    output = output.replace(/\"/g, "\\\"");
+    output = output.replace(/\t/g, "\\t");
+
+    return output;
+  }
+
+
+  function generateCode()
+  {
+    var scriptBase = document.form.scriptbase.value;
+    var inputCode = document.form.input.value;
+
+    document.form.escape.value = scriptBase.replace("{0}",
+      "document.write(unescape(\"" + escapeAll(inputCode) + "\"));");
+    document.form.rot13.value =  scriptBase.replace("{0}",
+      document.form.rot13decode.value + "document.write(rot13(\"" +
+      replaceSpecialChars(rot13(inputCode)) + "\"));");
+    document.form.base64.value =  scriptBase.replace("{0}",
+      document.form.base64decode.value + "document.write(decode64(\"" +
+      encode64(inputCode) + "\"));");
+
+    document.form.escape.value = escapeTxt(inputCode);
+  }
+
+-->
+</script>
+
+<form name="form">
+  <p>
+    Please input your text/code below and press "Encode" to generate the JavaScript code:<br />
+    <textarea id="input" cols="80" rows="8">Hello World!</textarea>
+    <br />
+    <input type="button" value="Encode" onclick="generateCode()" />
+  </p>
+  <p>
+    Escape Encoding:<br />
+    <textarea id="escape" cols="80" rows="8"></textarea>
+  </p>
+  <p>
+    Rot13 Encoding:<br />
+    <textarea id="rot13" cols="80" rows="8"></textarea>
+  </p>
+  <p>
+    Base64 Encoding:<br />
+    <textarea id="base64" cols="80" rows="8"></textarea>
+  </p>
+
+  <textarea id="scriptbase" style="display:none"><script language="JavaScript" type="text/javascript">{0}</script></textarea>
+  <textarea id="rot13decode" style="display:none">function rot13(input){return input.replace(/[a-zA-Z]/g,function(ch){return String.fromCharCode((ch<="Z"?90:122)>=(ch=ch.charCodeAt(0)+13)?ch:ch-26)})}</textarea>
+  <textarea id="base64decode" style="display:none">function decode64(input){var base64="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/=";var output="";var ch1,ch2,ch3,enc1,enc2,enc3,enc4;var i=0;input=input.replace(/[^A-Za-z0-9\+\/\=]/g,"");do{enc1=base64.indexOf(input.charAt(i++));enc2=base64.indexOf(input.charAt(i++));enc3=base64.indexOf(input.charAt(i++));enc4=base64.indexOf(input.charAt(i++));ch1=(enc1<<2)|(enc2>>4);ch2=((enc2&15)<<4)|(enc3>>2);ch3=((enc3&3)<<6)|enc4;output=output+String.fromCharCode(ch1);if(enc3!=64)output=output+String.fromCharCode(ch2);if(enc4!=64)output=output+String.fromCharCode(ch3);ch1=ch2=ch3="";enc1=enc2=enc3=enc4=""}while(i<input.length);return output}</textarea>
+</form>
+
+</body>
+
+</html>
