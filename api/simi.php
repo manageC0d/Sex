@@ -28,7 +28,7 @@ $b = array_rand($a,3);
 $phanhoi = $a[$b[1]];
 }
 $kqa1 = preg_replace("/đụ|cặc|lồn|cặt|loz|buồi|địt/is", "***", $phanhoi); // lọc từ max xấu
-$kqa2 = preg_replace("/Simi|sim|Simsimi|Sim|simsimi|simi|SIM/SIMSIMI", "•BMN2312•", $kqa1); // thay tên simi
+$kqa2 = preg_replace("/Simi|sim|Simsimi|Sim|simsimi|simi|SIM/SIMSIMI", "•BMN2312•", $phanhoi); // thay tên simi
 echo $kqa2; // hiển thị nội dung respond
 }
 
