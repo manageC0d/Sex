@@ -2,15 +2,10 @@
 //lưu api.php chạy api dạng domain/api.php?Simi=nghia&cauhoi=
 $text = $_GET[cauhoi]; // Lấy câu hỏi
 if($_GET['cauhoi']){
-echo "Liên Hệ FB : -https://www.facebook.com/BMN.2312- Để Lấy Key Simsimi";
+nghia($noidung);
 exit;
 }
-echo BMN2312($text); // thay nếu mày đã thay nghia bên trên
-
-function BMN2312($data){
-$data = preg_replace("/đụ|cặc|lồn|cặt|loz|buồi|địt/is", "***", $data); // lọc từ max xấu
-return $data;
-}
+echo "Liên Hệ FB : -https://www.facebook.com/BMN.2312- Để Lấy Key Simsimi";
 
 function nghia($noidung) {
 $key = 'e5fbeb60-09d7-40e3-96ef-7a6495da1832'; // paid key
