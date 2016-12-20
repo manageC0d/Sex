@@ -24,8 +24,8 @@ $headers = array(
 'User-Agent: Mozilla/5.0 (Macintosh; U; Intel Mac OS X 10.6; pl; rv:1.9.2.13) Gecko/20101203 Firefox/3.5.13',
 'X-Requested-With: XMLHttpRequest'
 );
-//http://simsimi.com/getRealtimeReq?uuid=m0njJQ6vh8ElgCfIsaZ6Zp8yYoZ0O1szQWaIvPOlpXg&lc=vi&ft=0&status=A&reqText=
-curl_setopt($curl, CURLOPT_URL, 'http://api.simsimi.com/request.p?key='.$key.'&lc=vn&ft=1.0&text='.urlencode($noidung));
+//curl_setopt($curl, CURLOPT_URL, 'http://api.simsimi.com/request.p?key='.$key.'&lc=vn&ft=1.0&text='.urlencode($noidung));
+curl_setopt($curl, CURLOPT_URL, 'http://simsimi.com/getRealtimeReq?uuid=m0njJQ6vh8ElgCfIsaZ6Zp8yYoZ0O1szQWaIvPOlpXg&lc=vi&ft=0&status=A&reqText='.urlencode($noidung));
 curl_setopt($curl, CURLOPT_HTTPHEADER, $headers);
 curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
 $result = curl_exec($curl);
