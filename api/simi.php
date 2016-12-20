@@ -1,13 +1,11 @@
 ﻿<?php
 //lưu api.php chạy api dạng domain/api.php?Simi=nghia&cauhoi=
-$text = $_GET[cauhoi]; // thay nếu mày thích
-$act = "nghia"; // thay nếu mày thích
-$check = $_GET[Simi]; // thay nếu mày thích
-if($check !== $act){
+$text = $_GET[cauhoi]; // Lấy câu hỏi
+if($_GET['cauhoi']){
 echo "Liên Hệ FB : -https://www.facebook.com/BMN.2312- Để Lấy Key Simsimi";
 exit;
 }
-echo BMN2312(nghia($text)); // thay nếu mày đã thay nghia bên trên
+echo BMN2312($text); // thay nếu mày đã thay nghia bên trên
 
 function BMN2312($data){
 $data = preg_replace("/đụ|cặc|lồn|cặt|loz|buồi|địt/is", "***", $data); // lọc từ max xấu
