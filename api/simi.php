@@ -30,8 +30,8 @@ curl_setopt($curl, CURLOPT_HTTPHEADER, $headers);
 curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
 $result = curl_exec($curl);
 $pharr = json_decode($result,true);
-$phanhoi = $pharr[response];
-//$phanhoi = $pharr[respSentence];
+//$phanhoi = $pharr[response];
+$phanhoi = $pharr[respSentence];
 if($phanhoi == '')
 {
 $a = array(' Em chưa được học câu đó - dạy cho em bằng ứng dụng SimSimi trên Android, iOS và Windows Phone nha ',
