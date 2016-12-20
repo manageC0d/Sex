@@ -1,6 +1,6 @@
 ﻿<?php
 //lưu api.php chạy api dạng domain/api.php?Simi=nghia&cauhoi=
-$text = $_GET[cauhoi]; // Lấy câu hỏi
+$noidung = $_GET[cauhoi]; // Lấy câu hỏi
 if($_GET['cauhoi']){
 nghia($noidung);
 exit;
