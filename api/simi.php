@@ -1,11 +1,5 @@
 ﻿<?php
 //lưu api.php chạy api dạng domain/api.php?Simi=nghia&cauhoi=
-$noidung = $_GET[cauhoi]; // Lấy câu hỏi
-if($_GET['cauhoi']){
-nghia($noidung);
-exit;
-}
-echo "Liên Hệ FB : -https://www.facebook.com/BMN.2312- Để Lấy Key Simsimi";
 
 function nghia($noidung) {
 $key = 'e5fbeb60-09d7-40e3-96ef-7a6495da1832'; // paid key
@@ -33,6 +27,16 @@ $a = array(' Em chưa được học câu đó - dạy cho em bằng ứng dụn
 $b = array_rand($a,3);
 $phanhoi = $a[$b[1]];
 }
-return $phanhoi; // hiển thị nội dung respond
+echo $phanhoi; // hiển thị nội dung respond
+}
+
+$noidung = $_GET['cauhoi'];
+if($_GET['cauhoi']){
+nghia($noidung);
+}
+else
+{
+echo
+"Liên Hệ FB : -https://www.facebook.com/BMN.2312- Để Lấy Key Simsimi";
 }
 ?>
