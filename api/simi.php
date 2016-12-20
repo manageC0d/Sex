@@ -27,9 +27,7 @@ $a = array(' Em chưa được học câu đó - dạy cho em bằng ứng dụn
 $b = array_rand($a,3);
 $phanhoi = $a[$b[1]];
 }
-$kqa1 = preg_replace("/đụ|cặc|lồn|cặt|loz|buồi|địt/is", "***", $phanhoi); // lọc từ max xấu
-$kqa2 = preg_replace("/Simi|sim|Simsimi|Sim|simsimi|simi|SIM/SIMSIMI", "•BMN2312•", $phanhoi); // thay tên simi
-echo $kqa2; // hiển thị nội dung respond
+echo $phanhoi; // hiển thị nội dung respond
 }
 
 $noidung = $_GET['cauhoi'];
