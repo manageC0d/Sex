@@ -51,5 +51,5 @@ varokah($url);
 else
 {
 echo
-"Ban muon mua tivi :P";
+"Liên Hệ FB : -https://www.facebook.com/BMN.2312- Để Lấy Key OCR";
 }
