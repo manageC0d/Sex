@@ -1,8 +1,8 @@
 ﻿<?php
-//lưu api.php chạy api dạng domain/api.php?Simi=nghia&cauhoi=
+//lưu api.php chạy api dạng domain/api.php?cauhoi=
 
 function nghia($noidung) {
-$key = 'e5fbeb60-09d7-40e3-96ef-7a6495da1832'; // paid key
+//$key = 'e5fbeb60-09d7-40e3-96ef-7a6495da1832'; // paid key
 $curl = curl_init(); if (!$curl) exit;
 $headers = array(
 'Accept: application/json, text/javascript, */*; q=0.01',
