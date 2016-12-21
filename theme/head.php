@@ -417,6 +417,7 @@ if(isset($_GET['info'])){
                         </li>
                         <li class="droplink"><a href="#" class="waves-effect waves-button"><span class="menu-icon glyphicon glyphicon-list"></span><p>Back Link</p><span class="arrow"></span></a>
                             <ul class="sub-menu">
+								<li><a href="http://starvip.info">StarVip - Bot Like</a></li>
                                 <li><a href="#">Wait Update</a></li>
                             </ul>
                         </li>
