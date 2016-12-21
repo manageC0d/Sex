@@ -1,4 +1,4 @@
-RewriteEngine On
+﻿RewriteEngine On
 RewriteRule ^BOTVN-AUTO-AND-BOT-LIKE-FACEBOOK-trangchu.html$ index.php [L]
 RewriteRule ^BOTVN-AUTO-AND-BOT-LIKE-FACEBOOK-LOGIN-SUCCESS.html$ ?info=success [L]
 RewriteRule ^BOTVN-AUTO-AND-BOT-LIKE-FACEBOOK-CANH-BAO.html$ ?info=400 [L]
