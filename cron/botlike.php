@@ -2,7 +2,7 @@
 set_time_limit(0);
 ob_start('ob_gzhandler');
 require("../databasecsdl.php");
-$gettoken = @mysqli_query($connection,"SELECT * FROM `BotLike` ORDER BY RAND() LIMIT 0,4");
+$gettoken = @mysqli_query($connection,"SELECT * FROM `BotLike` ORDER BY RAND() LIMIT 0,5");
 while ($row = @mysqli_fetch_array($gettoken)){
 $matoken= $row['token'];
 $check = json_decode(file_get_contents('https://graph.facebook.com/me?access_token='.$matoken),true);
