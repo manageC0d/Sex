@@ -6,13 +6,7 @@ if (!defined('BMN2312')) die ('The request not found');
                         <div class="col-lg-5 col-md-6">
                             <div class="panel panel-white">
                                 <div class="panel-heading clearfix">
-                                    <h4 class="panel-title">Đăng Nhập<!-- Đặt thẻ này vào phần đầu hoặc ngay trước thẻ đóng phần nội dung của bạn. -->
-<script src="https://apis.google.com/js/platform.js" async defer>
-  {lang: 'vi'}
-</script>
-
-<!-- Đặt thẻ này vào nơi bạn muốn Nút +1 kết xuất. -->
-<div class="g-plusone" data-href="https://bót.vn"></div></h4>
+                                    <h4 class="panel-title">Đăng Nhập</h4>
                                 </div>
                                 <div class="panel-body">
                                     <div id="rootwizard">
