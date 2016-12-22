@@ -15,7 +15,7 @@
     "prefer-lowest": false,
     "platform": {
         "ext-gd": "*",
-		"ext-mbstring": "*",
+		"ext-mbstring": "*"
     },
     "platform-dev": []
 }
