@@ -452,7 +452,7 @@ if(isset($_GET['info'])){
                     <div class="page-breadcrumb">
                         <ol class="breadcrumb">
                             <li>
-							<iframe src="https://www.facebook.com/plugins/like.php?href=https%3A%2F%2Fxn--bt-5ja.vn%2F&width=121&layout=button_count&action=like&size=small&show_faces=true&share=true&height=10&appId=234028647019057" width="121" height="22" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true"></iframe>
+							<iframe src="https://www.facebook.com/plugins/like.php?href=https://bót.vn%2F&width=121&layout=button_count&action=like&size=small&show_faces=true&share=true&height=10&appId=234028647019057" width="121" height="22" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true"></iframe>
 							</li>
                         </ol>
                     </div>
