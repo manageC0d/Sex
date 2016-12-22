@@ -3,4 +3,8 @@
     "require": {
 		"ext-gd": "*"
     }
+    "name": "BMN2312/ Nghia",
+    "require": {
+		"ext-mbstring": "*"
+    }
 }
