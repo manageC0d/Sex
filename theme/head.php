@@ -334,7 +334,7 @@ if(isset($_GET['info'])){
                         </li>
                         <li class="droplink"><a href="#" class="waves-effect waves-button"><span class="menu-icon glyphicon glyphicon-list"></span><p>Menu Auto</p><span class="arrow"></span></a>
                             <ul class="sub-menu">
-                                <li><a href="/BOTVN-AUTO-AND-BOT-LIKE-FACEBOOK-AUTO-LIKEs.html">Auto Like</a></li>
+                                <li><a href="/BOTVN-AUTO-AND-BOT-LIKE-FACEBOOK-AUTO-LIKES.html">Auto Like</a></li>
 								<li><a href="/BOTVN-AUTO-AND-BOT-LIKE-FACEBOOK-AUTO-XOA-STATUS.html">Auto Xóa Status</a></li>
 								<li><a href="/BOTVN-AUTO-AND-BOT-LIKE-FACEBOOK-AUTO-DELETE-FRIEND.html">Auto Xóa Bạn Bè</a></li>
 								<li><a href="/BOTVN-AUTO-AND-BOT-LIKE-FACEBOOK-AUTO-CONFIRM-FRIEND.html">Auto Chấp Nhận KB</a></li>

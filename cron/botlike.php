@@ -68,7 +68,7 @@ if(!is_dir('log')){   mkdir('log');   }
        $log=' ';
        }
 
-  if(ereg($y[id],$log)){
+  if(preg_match($y[id],$log)){
        return false;
        }else{
 if(strlen($log) > 5000){
