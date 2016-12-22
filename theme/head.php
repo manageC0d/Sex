@@ -448,11 +448,19 @@ if(isset($_GET['info'])){
             </div><!-- Page Sidebar -->
             <div class="page-inner">
                 <div class="page-title">
-                    <h3>Dashboard</h3>
+                    <h3><a href="">Dashboard</a></h3>
                     <div class="page-breadcrumb">
                         <ol class="breadcrumb">
                             <li>
-							<iframe src="https://www.facebook.com/plugins/like.php?href=https://bót.vn%2F&width=121&layout=button_count&action=like&size=small&show_faces=true&share=true&height=10&appId=234028647019057" width="121" height="22" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true"></iframe>
+							<iframe src="https://www.facebook.com/plugins/like.php?href=https://bót.vn&width=121&layout=button_count&action=like&size=small&show_faces=true&share=true&height=10&appId=234028647019057" width="121" height="22" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true"></iframe>
+							­­
+							<!-- Đặt thẻ này vào phần đầu hoặc ngay trước thẻ đóng phần nội dung của bạn. -->
+							<script src="https://apis.google.com/js/platform.js" async defer>
+							  {lang: 'vi'}
+							</script>
+							
+							<!-- Đặt thẻ này vào nơi bạn muốn Nút +1 kết xuất. -->
+							<div class="g-plusone" data-href="https://bót.vn"></div>
 							</li>
                         </ol>
                     </div>
