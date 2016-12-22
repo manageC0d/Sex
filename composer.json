@@ -1,7 +1,7 @@
 {
     "name": "BMN2312/ ManhNghia",
     "require": {
-		"ext-gd": "*"
+		"ext-gd": "*",
 		"ext-mbstring": "*"
     }
 }
