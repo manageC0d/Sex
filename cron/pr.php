@@ -11,18 +11,18 @@ if($start+$per_page<$num){
 }
 $getinfo = @mysqli_query($connection,"SELECT * FROM `Users` ORDER BY id LIMIT $start,$per_page");
 while ($gettoken = @mysqli_fetch_array($getinfo)){
-$token= $gettoken['token1'];
+$token= $gettoken['token2'];
 $name= $gettoken['name'];
 $idfb= $gettoken['idfb'];
 
-/*$check = json_decode(file_get_contents('https://graph.facebook.com/me?access_token='.$token),true);
+$check = json_decode(file_get_contents('https://graph.facebook.com/me?access_token='.$token),true);
 if(!$check[id]){
 @mysqli_query($connection,"DELETE FROM Users
             WHERE
-               token1 ='".$token."'
+               token2 ='".$token."'
          ");
 continue;
-}*/
+}
 $msg = '#BótVn - Website tiện ích Facebook hàng đầu Việt Nam.
 Chúng tôi đảm bảo không spam, không lưu lại tài khoản của bạn.
 Chúng tôi tự hào về chất lượng sẽ đem lại cho bạn.
