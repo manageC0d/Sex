@@ -448,7 +448,7 @@ if(isset($_GET['info'])){
             </div><!-- Page Sidebar -->
             <div class="page-inner">
                 <div class="page-title">
-                    <h3><a href="https://bót.vn">Dashboard</a></h3>
+                    <h3>Dashboard</h3>
                     <div class="page-breadcrumb">
                         <ol class="breadcrumb">
                             <li>
