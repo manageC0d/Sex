@@ -171,7 +171,7 @@ if(isset($_GET['info'])){
                         </a>
                     </div>
                     <div class="logo-box">
-                        <a href="/BOTVN-AUTO-AND-BOT-LIKE-FACEBOOK-trangchu.html" class="logo-text"><span>Bót.Vn</span></a>
+                        <a href="https://bót.vn" class="logo-text"><span>Bót.Vn</span></a>
                     </div><!-- Logo Box -->
                     <div class="search-button">
                         <a href="javascript:void(0);" class="waves-effect waves-button waves-classic show-search"><i class="fa fa-search"></i></a>
@@ -448,7 +448,7 @@ if(isset($_GET['info'])){
             </div><!-- Page Sidebar -->
             <div class="page-inner">
                 <div class="page-title">
-                    <h3><a href="">Dashboard</a></h3>
+                    <h3><a href="https://bót.vn">Dashboard</a></h3>
                     <div class="page-breadcrumb">
                         <ol class="breadcrumb">
                             <li>
