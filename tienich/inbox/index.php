@@ -32,7 +32,7 @@ session_start();
 	<span class="input-group-addon" ><span class="glyphicon glyphicon-lock" ></span></span>
 	<input type="text" placeholder="Access token :  EAAAACZAVC6ygBAKroCJrHS......" id="access_token" value="<?php echo $_SESSION['access_token'];?>" class="form-control" />
 	<div class="input-group-btn" >
-	<button type="button" class="btn btn-default" id="DS" ><span class="glyphicon glyphicon-log-in" ></span> ENTER</button>
+	<button type="button" class="btn btn-default" id="ancms" ><span class="glyphicon glyphicon-log-in" ></span> ENTER</button>
 	</div>
 	</div>
 	<p></p>
