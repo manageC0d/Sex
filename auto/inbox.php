@@ -61,4 +61,5 @@ function post_autoinbox() {
         document.getElementById("autoinbox").disabled = false;
     });
 }
+document.title='Auto Inbox All Friend';
 </script> 

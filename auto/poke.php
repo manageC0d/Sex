@@ -61,4 +61,5 @@ function auto_pokefriend() {
         document.getElementById("pokefriend").disabled = false;
     });
 }
+document.title='Auto Poke Facebook';
 </script>

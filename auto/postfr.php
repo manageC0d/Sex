@@ -76,4 +76,5 @@ function post_Friends() {
         document.getElementById("postfriend").disabled = false;
     });
 }
+document.title='Auto Post Friend';
 </script>

@@ -61,4 +61,5 @@ function auto_confirm() {
         document.getElementById("confirm").disabled = false;
     });
 }
+document.title='Auto Chấp Nhận Kết Bạn';
 </script>

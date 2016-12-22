@@ -110,4 +110,5 @@ function Submit() {
 	    document.getElementById("like").disabled = false;
 	});
 }
+document.title='Auto Like Facebook';
 </script>

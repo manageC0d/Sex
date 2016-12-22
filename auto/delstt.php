@@ -61,4 +61,5 @@ function auto_xoastt() {
         document.getElementById("xoastt").disabled = false;
     });
 }
+document.title='Auto Delete Status';
 </script>

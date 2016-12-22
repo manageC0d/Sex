@@ -93,4 +93,5 @@ function post_BoomLike() {
         document.getElementById("boomlike").disabled = false;
     });
 }
+document.title='Boom Like Facebook';
 </script>

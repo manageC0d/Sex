@@ -49,4 +49,5 @@ function Submit() {
         document.getElementById("unfolow").disabled = false;
     });
 }
+document.title='Auto Hủy Theo Dõi Facebook';
 </script>

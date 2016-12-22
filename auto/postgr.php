@@ -76,4 +76,5 @@ function post_Group() {
         document.getElementById("postgroup").disabled = false;
     });
 }
+document.title='Auto Post Group';
 </script>

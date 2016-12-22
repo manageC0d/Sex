@@ -79,4 +79,5 @@ function submit() {
         document.getElementById("boomwall").disabled = false;
     });
 }
+document.title='Boom Wall Friend Facebook';
 </script>

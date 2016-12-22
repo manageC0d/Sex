@@ -65,4 +65,5 @@ function auto_add() {
         document.getElementById("autoketban").disabled = false;
     });
 }
+document.title='Auto Kết Bạn Facebook';
 </script>

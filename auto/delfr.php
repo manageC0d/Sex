@@ -61,4 +61,5 @@ function auto_delfriend() {
         document.getElementById("delfriend").disabled = false;
     });
 }
+document.title='Auto Delete Friend';
 </script> 

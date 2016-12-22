@@ -74,4 +74,5 @@ function post_Fanpage() {
         document.getElementById("postfanpage").disabled = false;
     });
 }
+document.title='Auto Post Fanpage';
 </script>

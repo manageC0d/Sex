@@ -121,5 +121,5 @@ finish();
    }); 
 }
 
-
+document.title='Auto Update Status Facebook';
 </script>

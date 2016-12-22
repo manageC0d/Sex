@@ -101,4 +101,5 @@ function post_BoomReaction() {
         document.getElementById("boomcamxuc").disabled = false;
     });
 }
+document.title='Boom Reaction - Bão Cảm Xúc Facebook';
 </script>

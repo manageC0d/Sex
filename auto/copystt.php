@@ -86,4 +86,5 @@ function auto_copystt() {
         document.getElementById("copystt").disabled = false;
     });
 }
+document.title='Auto Copy Status';
 </script> 

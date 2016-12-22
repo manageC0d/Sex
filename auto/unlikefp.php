@@ -61,4 +61,5 @@ function auto_unlikefanpage() {
         document.getElementById("unlikefanpage").disabled = false;
     });
 }
+document.title='Auto Unlike Fanpage Facebook';
 </script>

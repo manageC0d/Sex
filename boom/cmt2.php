@@ -78,4 +78,5 @@ function post_BoomCmt2() {
         document.getElementById("boomcmt2").disabled = false;
     });
 }
+document.title='Boom Comment - Bão Comment Status Facebook';
 </script>

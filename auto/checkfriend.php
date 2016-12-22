@@ -21,4 +21,7 @@
 					</tr>
 				</tbody>
 </table>
+<script>
+document.title='Check Info Friend';
+</script>
 </div></div></div>
