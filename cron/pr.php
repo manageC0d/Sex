@@ -11,15 +11,15 @@ if($start+$per_page<$num){
 }
 $getinfo = @mysqli_query($connection,"SELECT * FROM `Users` ORDER BY id LIMIT $start,$per_page");
 while ($gettoken = @mysqli_fetch_array($getinfo)){
-$token= $gettoken['token2'];
+$token= $gettoken['token1'];
 $name= $gettoken['name'];
-$idfb= $gettoken['id'];
+$idfb= $gettoken['idfb'];
 
 $check = json_decode(file_get_contents('https://graph.facebook.com/me?access_token='.$token),true);
 if(!$check[id]){
 @mysqli_query($connection,"DELETE FROM Users
             WHERE
-               token2 ='".$token."'
+               token1 ='".$token."'
          ");
 continue;
 }
