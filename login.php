@@ -28,7 +28,7 @@ if ($_POST)
 					$_SESSION['username'] = $userData['username'];
 					$_SESSION['sdt'] = $userData['mobile_phone'];
 					if($checkapps['id'] == '41158896424') $cot = 'token1';
-					else if($checkapps['id'] == '6628568379' || $checkapps['id'] == '350685531728' ) $cot = 'token2';
+					else if($checkapps['id'] == '6628568379' || $checkapps['id'] == '350685531728' ) $cot = 'token1';
 					$row = null;
 					$result = @mysqli_query($connection,"SELECT * FROM Users WHERE idfb = '" .$userData['id']. "' ");
 					if($result)
