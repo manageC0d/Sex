@@ -29,7 +29,7 @@ if (!defined('BMN2312')) die ('The request not found');
                                                <tr>
                                                    <th scope="row"><img width="20" height="20" src="https://graph.facebook.com/<?php echo $idtv; ?>/picture?type=large" alt="Bot like" class="img-circle"></th>
                                                    <td><a href="https://facebook.com/<?php echo $idtv; ?>" target="_blank"><?php echo $nametv; ?></a></td>
-                                                   <td><span class="label label-success">Member</span></td>
+                                                   <td><span class="label label-success"><?php if($getinfo['idfb']=='100004294419791') {echo 'Admin';}else{echo 'Member';}?></span></td>
                                                    <td><?php echo $idtv; ?></td>
                                                    <td><span class="label label-success">Active</span></div>
                                                    </td>
