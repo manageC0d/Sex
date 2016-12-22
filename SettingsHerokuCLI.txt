@@ -1,0 +1,3 @@
+﻿heroku config:set \
+  ERROR_PAGE_URL=//xn--bt-5ja.vn/500.html \
+  MAINTENANCE_PAGE_URL=//xn--bt-5ja.vn/baotri
