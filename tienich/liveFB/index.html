@@ -1,4 +1,4 @@
-<html>
+﻿<html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" lang="en"/>
     <title>DucFly.Net - Live Video FB on PC</title>
@@ -27,7 +27,7 @@
 <script>
   window.fbAsyncInit = function() {
     FB.init({
-      appId      : '966918986739241',
+      appId      : '1616939788559979',
       xfbml      : true,
       version    : 'v2.6'
     });
@@ -118,8 +118,29 @@
 </a>
 <script>
 <!--
-document.write(unescape("%3Cscript%3E%0Adocument.getElementById%28%27livevideo%27%29.onclick%20%3D%20function%28%29%20%7B%0A%20%20FB.ui%28%7B%0A%20%20%20%20display%3A%20%27popup%27%2C%0A%20%20%20%20method%3A%20%27live_broadcast%27%2C%0A%20%20%20%20phase%3A%20%27create%27%2C%0A%7D%2C%20function%28response%29%20%7B%0A%20%20%20%20if%20%28%21response.id%29%20%7B%0A%20%20%20%20%20%20alert%28%27B%u1EA1n%20%u0111%E3%20hu%u1EF7%20stream%27%29%3B%0A%20%20%20%20%20%20return%3B%0A%20%20%20%20%7D%0A%20%20%20%20/*alert%28%27stream%20url%3A%27%20+%20response.secure_stream_url%29%3B*/%0A%20%20%20%20FB.ui%28%7B%0A%20%20%20%20%20%20display%3A%20%27popup%27%2C%0A%20%20%20%20%20%20method%3A%20%27live_broadcast%27%2C%0A%20%20%20%20%20%20phase%3A%20%27publish%27%2C%0A%20%20%20%20%20%20broadcast_data%3A%20response%2C%0A%20%20%20%20%7D%2C%20function%28response%29%20%7B%0A%20%20%20%20alert%28%22Tr%u1EA1ng%20th%E1i%20stream%3A%22%20+%20response.status%29%3B%0A%20%20%20%20%7D%29%3B%0A%20%20%7D%29%3B%0A%7D%3B%0A%3C/script%3E"));
-//-->
+<script>
+document.getElementById('livevideo').onclick = function() {
+  FB.ui({
+    display: 'popup',
+    method: 'live_broadcast',
+    phase: 'create',
+}, function(response) {
+    if (!response.id) {
+      alert('Bắt đầu chạy stream');
+      return;
+    }
+    /*alert('stream url:' + response.secure_stream_url);*/
+    FB.ui({
+      display: 'popup',
+      method: 'live_broadcast',
+      phase: 'publish',
+      broadcast_data: response,
+    }, function(response) {
+    alert("Trạng thái stream:" + response.status);
+    });
+  });
+};
+</script>//-->
 </script>
 <div class="row"></div>
 <div class="center">
