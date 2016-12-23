@@ -1,7 +1,4 @@
-﻿<?php
-session_start();
-?>
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="vi">
 <head>
 		<title>#BotVN - Facebook Inbox Manager - Bót.Vn</title>
@@ -26,13 +23,13 @@ session_start();
 <!-- Main -->
 	<main>
 	<div class="col-sm-12" >
-	<h3>Đọc Tin Nhắn Qua Token <small>[<a href="https://developers.facebook.com/tools/debug/accesstoken/?app_id=41158896424" target="_blank" >GET TOKEN</a>]</small></h3>
-	<hr/><b>Nhập MÃ TOKEN: </b>
+	<h3>Facebook Inbox Manager <small>[<a href="https://goo.gl/DpLWpq" target="_blank" >CÀI TOKEN</a>][<a href="view-source:https://goo.gl/DpLWpq" target="_blank" >GET TOKEN</a>]</small></h3>
+	<hr/>
 	<div class="input-group" >
 	<span class="input-group-addon" ><span class="glyphicon glyphicon-lock" ></span></span>
-	<input type="text" placeholder="Access token :  EAAAACZAVC6ygBAKroCJrHS......" id="access_token" value="<?php echo $_SESSION['access_token'];?>" class="form-control" />
+	<input type="text" placeholder="Access token :  CAAAACZAVC6ygBAKroCJrHS......" id="access_token" class="form-control" />
 	<div class="input-group-btn" >
-	<button type="button" class="btn btn-default" id="ancms" ><span class="glyphicon glyphicon-log-in" ></span> ENTER</button>
+	<button type="button" class="btn btn-default" id="thangkenfon" ><span class="glyphicon glyphicon-log-in" ></span> ENTER</button>
 	</div>
 	</div>
 	<p></p>
@@ -61,7 +58,7 @@ session_start();
 	<div class="col-sm-8">
 		<div class="panel panel-primary">
 			<div class="panel-heading">
-				<span class="glyphicon glyphicon-user"></span> <span id="user_inbox" >Mạnh Nghĩa</span><div class="pull-right" ><span class="badge" id="ducan">9999</span></div>
+				<span class="glyphicon glyphicon-user"></span> <span id="user_inbox" >{{user_inbox}}</span><div class="pull-right" ><span class="badge" id="ducan">{{anh_thang}}</span></div>
 			</div>
 			<ul class="list-group" >
 			<div class="panel-body"  style="overflow-y: auto; max-height: 300px;">
@@ -84,10 +81,7 @@ session_start();
 </main>
 <!-- Javascript -->
 <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js" ></script>
-<script type="text/javascript" src="b.php"></script>
+<script type="text/javascript" src="d.php"></script>
 </script-->
-<?php
-include './foot.php';
-?>
 </body>
 </html>
