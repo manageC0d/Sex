@@ -25,22 +25,49 @@
 </script>
 <style>.center{text-align: center;}</style>
 <script>
-  window.fbAsyncInit = function() {
-    FB.init({
-      appId      : '1616939788559979',
-      xfbml      : true,
-      version    : 'v2.6'
-    });
-  };
+					 // This is called with the results from from FB.getLoginStatus().
+					 
+					 function statusChangeCallback(response) {
+					    if (response.status === 'connected') {
+					    	
+					    	//console.log(access_token);
+					       FB.api('/me', function(response) {  
+					       	FBRES = response;
+		
+						  });
+					    } 
+					  }
+					  window.fbAsyncInit = function() {
+					FB.init({
+									  appId      : '1616939788559979',
+									  xfbml      : true,
+									  version    : 'v2.8'
+									});
+						 FB.getLoginStatus(function(response) {
+						    statusChangeCallback(response);
+						  });
+						  var my_video_player;
+					      FB.Event.subscribe('xfbml.ready', function(msg) {
+					         if (msg.type === 'video' && msg.id === 'fb-live-video') {
+					          my_video_player = msg.instance;
+					          my_video_player.unmute();
+					        }
+					      });
+					  
+					  };
+					
+					  // Load the SDK asynchronously
+					  (function(d, s, id) {
+					    var js, fjs = d.getElementsByTagName(s)[0];
+					    if (d.getElementById(id)) return;
+					    js = d.createElement(s); js.id = id;
+					    js.src = "//connect.facebook.net/vi_VN/sdk.js";
+					    fjs.parentNode.insertBefore(js, fjs);
+					  }(document, 'script', 'facebook-jssdk'));
 
-  (function(d, s, id){
-     var js, fjs = d.getElementsByTagName(s)[0];
-     if (d.getElementById(id)) {return;}
-     js = d.createElement(s); js.id = id;
-     js.src = "//connect.facebook.net/en_US/sdk.js";
-     fjs.parentNode.insertBefore(js, fjs);
-   }(document, 'script', 'facebook-jssdk'));
-</script>
+
+					</script>
+
 </head>
 <body>
 <div class="container">
