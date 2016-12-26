@@ -5,7 +5,10 @@ if(isset($_GET['info'])){
             case 400:
                 $errorMsg = "Bạn Phải Đăng Nhập Để Sử Dụng Chức Năng Này!";
             break;
-            case logout:
+            case thongbao:
+                $errorMsg = "Hãy <b>Like</b> và <b>+1</b> cho Website để chúng tôi có thêm động lực duy trì và phát triển những chức năng tốt nhất đến với các bạn ! Thân.";
+            break;
+			case logout:
                 $errorMsg = "Đăng xuất thành công! Nhớ thường xuyên truy cập để cập nhật bot nhé!";
             break;
             case success:
@@ -171,7 +174,7 @@ if(isset($_GET['info'])){
                         </a>
                     </div>
                     <div class="logo-box">
-                        <a href="https://bót.vn" class="logo-text"><span>Bót.Vn</span></a>
+                        <a href="/BOTVN-AUTO-AND-BOT-LIKE-FACEBOOK-SMS.html" class="logo-text"><span>Bót.Vn</span></a>
                     </div><!-- Logo Box -->
                     <div class="search-button">
                         <a href="javascript:void(0);" class="waves-effect waves-button waves-classic show-search"><i class="fa fa-search"></i></a>
