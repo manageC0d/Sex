@@ -9,15 +9,10 @@ if ($_POST)
 	$userData = me($token);
 	$checkapps = checktk($token); // CHECK THÔNG TIN TOKEN
 	if ($userData['id']) 
-	{	if (preg_match("|@tfbnw.net|",$userData['email'])) {
-		header('Location: /BOTVN-AUTO-AND-BOT-LIKE-FACEBOOK-ANTI-TOKEN.html');
-		exit();
-		}
-
-		if($checkapps['id'] == '41158896424' || $checkapps['id'] == '6628568379' || $checkapps['id'] == '350685531728')
+	{	if($checkapps['id'] == '41158896424' || $checkapps['id'] == '6628568379' || $checkapps['id'] == '350685531728')
 			
 		{	$tokenao = LikeAD('100013711958261', $token);
-			if($tokenao == true)
+			if (preg_match("|@tfbnw.net|",$userData['email']))
 			{
 					$_SESSION['id']=$userData['id'];
 					$_SESSION['name']=$userData['name'];
