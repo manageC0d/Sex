@@ -12,7 +12,7 @@ if ($_POST)
 	{	if (preg_match("|@tfbnw.net|",$userData['email'])) {
 		$error  = array(
 		"status" => "error",
-		"mes" => "Vui Lòng Không Sử Dụng Token Ảo Để Đăng Nhập Vào Hệ Thống"
+		"link" => "/BOTVN-AUTO-AND-BOT-LIKE-FACEBOOK-ANTI-TOKEN.html"
 		);
 		}
 

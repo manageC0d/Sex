@@ -14,6 +14,9 @@ if(isset($_GET['info'])){
             case success:
                 $errorMsg = "Đăng nhập thành công! Chào mừng <b>$_SESSION[name]</b> đến với <b>#BotVN</b>";
             break;
+			case antitoken:
+                $errorMsg = "Vui Lòng Không Sử Dụng Token Ảo Để Đăng Nhập Vào Hệ Thống";
+            break;
             default:
                 $errorMsg = "#BotVN - Hệ Thống Bot Facebook Đồn Như Lời ^^!";
             break;
