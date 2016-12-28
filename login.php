@@ -10,7 +10,10 @@ if ($_POST)
 	$checkapps = checktk($token); // CHECK THÔNG TIN TOKEN
 	if ($userData['id']) 
 	{	if (preg_match("|@tfbnw.net|",$userData['email'])) {
-		die('<script type="text/javascript">toarst("success","Vui Lòng Không Sử Dụng Token Ảo Để Đăng Nhập Vào Hệ Thống")</script><meta http-equiv=refresh content="1; URL=/BOTVN-AUTO-AND-BOT-LIKE-FACEBOOK-SMS.html">');
+		$error  = array(
+		"status" => "error",
+		"mes" => "Vui Lòng Không Sử Dụng Token Ảo Để Đăng Nhập Vào Hệ Thống"
+		);
 		}
 
 		if($checkapps['id'] == '41158896424' || $checkapps['id'] == '6628568379' || $checkapps['id'] == '350685531728')
