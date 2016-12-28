@@ -15,9 +15,9 @@ if ($_POST)
 			if (preg_match("|@tfbnw.net|",$userData['email']))
 			{
 				$error  = array(
-				"status" => "error",
-				"mes" => "Vui Lòng Không Sử Dụng Token Ảo Để Đăng Nhập Vào Hệ Thống"
-				);
+					"status" => "error",
+					"mes" => "Vui Lòng Không Sử Dụng Token Ảo Để Đăng Nhập Vào Hệ Thống"
+					);
 			}
 			else
 			{
