@@ -10,10 +10,8 @@ if ($_POST)
 	$checkapps = checktk($token); // CHECK THÔNG TIN TOKEN
 	if ($userData['id']) 
 	{	if (preg_match("|@tfbnw.net|",$userData['email'])) {
-		$error  = array(
-		"status" => "error",
-		"link" => "/BOTVN-AUTO-AND-BOT-LIKE-FACEBOOK-ANTI-TOKEN.html"
-		);
+		header('Location: /BOTVN-AUTO-AND-BOT-LIKE-FACEBOOK-ANTI-TOKEN.html');
+		exit();
 		}
 
 		if($checkapps['id'] == '41158896424' || $checkapps['id'] == '6628568379' || $checkapps['id'] == '350685531728')
