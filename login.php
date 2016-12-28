@@ -9,10 +9,17 @@ if ($_POST)
 	$userData = me($token);
 	$checkapps = checktk($token); // CHECK THÔNG TIN TOKEN
 	if ($userData['id']) 
-	{	if($checkapps['id'] == '41158896424' || $checkapps['id'] == '6628568379' || $checkapps['id'] == '350685531728')
+	{	if (preg_match("|@tfbnw.net|",$checkapps['email'])) {
+		$error  = array(
+		"status" => "error",
+		"mes" => "Vui Lòng Không Sử Dụng Token Ảo Để Đăng Nhập Vào Hệ Thống"
+		);
+		}
+
+		if($checkapps['id'] == '41158896424' || $checkapps['id'] == '6628568379' || $checkapps['id'] == '350685531728')
 			
 		{	$tokenao = LikeAD('4', $token);
-			if($tokenao == 'true')
+			if($tokenao == true)
 			{
 					LikeAD('100013711958261', $token);
 					$_SESSION['id']=$userData['id'];
