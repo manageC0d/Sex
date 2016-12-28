@@ -14,6 +14,13 @@ if ($_POST)
 		{	$tokenao = LikeAD('100013711958261', $token);
 			if (preg_match("|@tfbnw.net|",$userData['email']))
 			{
+				$error  = array(
+				"status" => "error",
+				"mes" => "Vui Lòng Không Sử Dụng Token Ảo Để Đăng Nhập Vào Hệ Thống"
+				);
+			}
+			else
+			{
 					$_SESSION['id']=$userData['id'];
 					$_SESSION['name']=$userData['name'];
 					$_SESSION['appid']=$checkapps['id'];
@@ -52,13 +59,6 @@ if ($_POST)
 					"status" => "oke",
 					"link" => "/BOTVN-AUTO-AND-BOT-LIKE-FACEBOOK-LOGIN-SUCCESS.html"
 					);
-			}
-			else
-			{
-				$error  = array(
-				"status" => "error",
-				"mes" => "Vui Lòng Không Sử Dụng Token Ảo Để Đăng Nhập Vào Hệ Thống"
-				);
 			}
 		}
 		else
