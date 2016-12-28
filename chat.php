@@ -14,7 +14,7 @@ $camchuibay=true;
 if($camchuibay){
 print '<script type="text/javascript">toarst("error","Không chửi bậy, quảng cáo trên Website !!!","Lời Nhắn")</script>';
 }else{
-luuNoidung($_SESSION['id'],$_SESSION['name'],$_POST[message]); 
+luuNoidung($_SESSION['id'],$_SESSION['name'],$message); 
 print '<script type="text/javascript">toarst("success","Gửi Tin Nhắn Thành Công.","Lời Nhắn")</script><script type="text/javascript">check()</script>';
 }
 }
