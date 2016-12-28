@@ -4,7 +4,7 @@ hienChatbox();
 
 if($_POST[message]){
 if($_SESSION['id'] == NULL) die('<script type="text/javascript">toarst("error","Đăng nhập đi bạn hiền :P","Lời Nhắn")</script>');
-$message=$_POST[message];
+$message=htmlentities($_POST[message]);
 $xxx=array('cc','cặc','ngu','loz','con mẹ mày','sủa','đòi','web như cc','địt','mẹ','lồn','cac','lon','cái loz','cái lồn','con cặc','địt mẹ mày','con me may',);
 foreach($xxx as $xn=> $chuibay){
 if(ereg($chuibay,strtolower($message))){
