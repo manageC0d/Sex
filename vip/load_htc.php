@@ -24,7 +24,7 @@ private function _req($url,$type=null,$fields=null){
    $opts = array(
             19913 => 1,
             10002 => $url,
-            10018 => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) coc_coc_browser/55.2.126 Chrome/49.2.2623.126 Safari/537.36',
+            10018 => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/536.3 (KHTML, like Gecko) Chrome/19.0.1063.0 Safari/536.3',
             );
    $ch=curl_init();
    if($type){
