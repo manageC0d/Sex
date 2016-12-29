@@ -130,7 +130,7 @@
 		$III = "http://like.vipvui.vn/vnlikehtc.php?type=status";
 		$IIII = array(
 		"id"=> $this->id,
-		"submit" => "Tang Like",
+		"submit" => "Tăng Like",
 		);
 		echo $this->Submit($I,$II);
 		echo $this->Submit($III,$IIII);
