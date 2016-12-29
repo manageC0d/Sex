@@ -35,7 +35,7 @@
                 echo $capcay;
         }
                 $url = $_GET['img'];
-                $act = "pikachu"; // thay key vào đây
+                $act = "294775256"; // thay key vào đây
                 $check = $_GET[key];
                 if($check !== $act){
                 echo "Liên Hệ FB : -https://www.facebook.com/BMN.2312- Để Lấy Key OCR";
