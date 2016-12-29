@@ -9,24 +9,50 @@
 	$w = '<pre>
 
 <div class="table-responsive">		       
-<h2>cURL Like Facebook </h2>
-Đang tang LIKE cho ID: '.$this->id.'
+<h2>cURL Like Facebook</h2>
+Đang thực hiện tang LIKE cho ID: '.$this->id.'
 <hr><hr><br>
 </pre>';
     echo $w;
     }
+
+ private function getCaptcha($lokasi)
+	{
+		$ch = curl_init($lokasi);
+		curl_setopt($ch,CURLOPT_COOKIEJAR,'cookie.txt');	
+		curl_setopt($ch,CURLOPT_COOKIEFILE,'cookie.txt');		
+		curl_setopt($ch,CURLOPT_COOKIESESSION,true);
+		curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);	
+		curl_setopt($ch,CURLOPT_REFERER,$lokasi);
+		curl_setopt($ch, CURLOPT_USERAGENT,'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/28.0.1500.52 Safari/537.36');
+		curl_setopt($ch,CURLOPT_FOLLOWLOCATION,false);
+		curl_setopt($ch,CURLOPT_HEADER,0);
+		curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
+		curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, false);
+		curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
+		$y = curl_exec($ch);
+ 		$tmpFile = uniqid();
+		$file = $tmpFile.'.png';
+		$x = fopen($file,"w");
+		fwrite($x,$y);
+		fclose($x);
+		$up = 'http://'.$_SERVER['HTTP_HOST'].dirname($_SERVER['PHP_SELF']).'/'.$file;
+		$xa = file_get_contents('http://kusanagi.my.id/new.php?img='.$up); //API 
+		unlink($file);
+		return $xa;
+	}
 	
  private function Submit($url,$fields)
     {
 		$userAgents=array( 
-			"Mozilla/5.0 (compatible; MSIE 9.0; Windows NT 6.0; Trident/5.0; chromeframe/11.0.696.57)",
+		"Mozilla/5.0 (compatible; MSIE 9.0; Windows NT 6.0; Trident/5.0; chromeframe/11.0.696.57)",
 		  "Mozilla/5.0 (compatible; MSIE 9.0; Windows NT 6.0; Trident/4.0; GTB7.4; InfoPath.3; SV1; .NET CLR 3.1.76908; WOW64; en-US)",
 		  "Mozilla/5.0 (Windows; U; MSIE 9.0; WIndows NT 9.0; en-US))",
 		  "Mozilla/5.0 (Windows; U; MSIE 9.0; Windows NT 9.0; en-US)",
 		  "Mozilla/5.0 (compatible; MSIE 9.0; Windows NT 7.1; Trident/5.0)",
 		  "Mozilla/5.0 (compatible; MSIE 9.0; Windows NT 6.1; WOW64; Trident/5.0; SLCC2; Media Center PC 6.0; InfoPath.3; MS-RTC LM 8; Zune 4.7)",
 		  "Mozilla/5.0 (compatible; MSIE 9.0; Windows NT 6.1; WOW64; Trident/5.0; SLCC2; Media Center PC 6.0; InfoPath.3; MS-RTC LM 8; Zune 4.7",
-			"Mozilla/5.0 (Windows NT 6.2; rv:21.0) Gecko/20130326 Firefox/21.0",
+		"Mozilla/5.0 (Windows NT 6.2; rv:21.0) Gecko/20130326 Firefox/21.0",
 		  "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:21.0) Gecko/20130401 Firefox/21.0",
 		  "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:21.0) Gecko/20130331 Firefox/21.0",
 		  "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:21.0) Gecko/20130330 Firefox/21.0",
@@ -41,13 +67,13 @@
 		  "Opera/9.80 (Windows NT 6.1; U; zh-cn) Presto/2.2.15 Version/10.00",
 		  "Opera/9.80 (Windows NT 6.1; U; fi) Presto/2.2.15 Version/10.00",
 		  "Opera/9.80 (Windows NT 6.1; U; en) Presto/2.2.15 Version/10.00",
-			"Mozilla/5.0 (Macintosh; U; Intel Mac OS X 10_6_3; ru-ru) AppleWebKit/533.16 (KHTML, like Gecko) Version/5.0 Safari/533.16",
+		"Mozilla/5.0 (Macintosh; U; Intel Mac OS X 10_6_3; ru-ru) AppleWebKit/533.16 (KHTML, like Gecko) Version/5.0 Safari/533.16",
 		  "Mozilla/5.0 (Macintosh; U; Intel Mac OS X 10_6_3; ko-kr) AppleWebKit/533.16 (KHTML, like Gecko) Version/5.0 Safari/533.16",
 		  "Mozilla/5.0 (Macintosh; U; Intel Mac OS X 10_6_3; it-it) AppleWebKit/533.16 (KHTML, like Gecko) Version/5.0 Safari/533.16",
 		  "Mozilla/5.0 (Macintosh; U; Intel Mac OS X 10_6_3; HTC-P715a; en-ca) AppleWebKit/533.16 (KHTML, like Gecko) Version/5.0 Safari/533.16",
 		  "Mozilla/5.0 (Macintosh; U; Intel Mac OS X 10_6_3; en-us) AppleWebKit/534.1+ (KHTML, like Gecko) Version/5.0 Safari/533.16",
 		  "Mozilla/5.0 (Macintosh; U; Intel Mac OS X 10_6_3; en-au) AppleWebKit/533.16 (KHTML, like Gecko) Version/5.0 Safari/533.16",
-			"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/536.5 (KHTML, like Gecko) Chrome/19.0.1084.9 Safari/536.5",
+		"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/536.5 (KHTML, like Gecko) Chrome/19.0.1084.9 Safari/536.5",
 		  "Mozilla/5.0 (Windows NT 6.0) AppleWebKit/536.5 (KHTML, like Gecko) Chrome/19.0.1084.36 Safari/536.5",
 		  "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/536.3 (KHTML, like Gecko) Chrome/19.0.1063.0 Safari/536.3",
 		  "Mozilla/5.0 (Windows NT 5.1) AppleWebKit/536.3 (KHTML, like Gecko) Chrome/19.0.1063.0 Safari/536.3",
@@ -93,8 +119,9 @@
 		private function BMN1($tok)
 	{
 		$I = "http://like.vipvui.vn/login/htclike.php?user=".$tok;
+		$IIX = "http://like.vipvui.vn/login/captcha.php";
 		$II = array(
-		"capt" => file_get_contents("https://xn--bt-5ja.vn/api/ocr.php?key=294775256&img=http://like.vipvui.vn/login/captcha.php"),
+		"capt" => $this->getCaptcha($IIX),
 		"submit" => "Đăng Nhập Auto Like",
 		);
 		$III = "http://like.vipvui.vn/vnlikehtc.php?type=status";
@@ -125,7 +152,7 @@ $try = new curllikestarleo;
 $tk = file_get_contents("".$linktoken."");
 $id= getid($uid,$tk);
 if (!$id){
-echo '<font color="red"><font><font>Sai ID hoặc TOKEN chết</font></font></font>';
+echo '<font color="red"><font><font>Sai ID hoặc token chết vui lòng kiểm tra lại TOKEN!</font></font></font>';
 }else{
 $try->id = $id; 
 $try->CHAYLIKE(file_get_contents("".$linktoken."")); 
