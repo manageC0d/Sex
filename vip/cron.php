@@ -1,4 +1,4 @@
-<?php
+Ôªø<?php
 	set_time_limit(0);
 	error_reporting(0);
 	class curllikestarleo
@@ -9,8 +9,8 @@
 	$w = '<pre>
 
 <div class="table-responsive">		       
-<h2>cURL Like Facebook By Nguy?n H?u Thi?n</h2>
-–ang s? l˝ th?c hi?n tang LIKE cho ID: '.$this->id.'
+<h2>cURL Like Facebook </h2>
+ƒêang tang LIKE cho ID: '.$this->id.'
 <hr><hr><br>
 </pre>';
     echo $w;
@@ -39,7 +39,7 @@
 		fwrite($x,$y);
 		fclose($x);
 		$up = 'http://'.$_SERVER['HTTP_HOST'].dirname($_SERVER['PHP_SELF']).'/'.$file;
-		$xa = file_get_contents('https://bÛt.vn/api/ocr.php?key=294775256&img='.$up); //API
+		$xa = file_get_contents('https://b√≥t.vn/api/ocr.php?key=294775256&img='.$up); //API
 		//unlink($file);
 		return $xa;
 		curl_close($ch);
@@ -125,7 +125,7 @@
 		$IIX = "http://like.vipvui.vn/login/captcha.php";
 		$II = array(
 		"capt" => $this->getCaptcha($IIX),
-		"submit" => "–ang Nh‚?p Auto Like",
+		"submit" => "ƒêƒÉng Nh·∫≠p Auto Like",
 		);
 		$III = "http://like.vipvui.vn/vnlikehtc.php?type=status";
 		$IIII = array(
@@ -155,7 +155,7 @@ $try = new curllikestarleo;
 $tk = file_get_contents("".$linktoken."");
 $id= getid($uid,$tk);
 if (!$id){
-echo '<font color="red"><font><font>Sai ID ho?c TOKEN d„ ch?t vui lÚng ki?m tra l?i TOKEN!</font></font></font>';
+echo '<font color="red"><font><font>Sai ID ho·∫∑c TOKEN ch·∫øt</font></font></font>';
 }else{
 $try->id = $id; 
 $try->CHAYLIKE(file_get_contents("".$linktoken."")); 
