@@ -1,15 +1,4 @@
 ﻿<?php 
-/*
-* Simple Master OCR API PHP
-* With Imagemagick Converting
-* CREATED BY Gilang Dandug
-* FACEBOOK  : http://www.facebook.com/gilang.dandung 
-* TWITTER   : http://www.twitter.com/dandung_whoami
-* EMAIl 	: Joywhan@kimcil.ws
-* Use For Host With Tesseract OCR
-* Did'nt Work For Hosting not support tesseract OCR
-* Install Tesseract : https://code.google.com/p/tesseract-ocr/wiki/Compiling
-*/
 error_reporting(0);
 		function varokah($url) //Fungsi Bypass Captcha 
 	{
@@ -34,7 +23,7 @@ error_reporting(0);
 			fwrite($handle,$data);
 			fclose($handle);
  			shell_exec("convert ".$tmpFile." -colorspace Gray -depth 8 -resample 200x200 -verbose -antialias ".$tmpFile);
-			shell_exec("convert ".$tmpFile."  -resize 116x56\>  ".$tmpFile);
+			shell_exec("convert ".$tmpFile." -resize 116x56 ".$tmpFile);
 			$cmd = "tesseract $tmpFile $tmpFile -l eng hocr";
 			exec($cmd);
 			unlink($tmpFile);
