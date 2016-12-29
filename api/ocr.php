@@ -34,11 +34,11 @@
                 echo $capcay;
         }
                 $url = $_GET['img'];
-                if($_GET['img']){
-                BMN2312($url);
-        }
-                else
-        {
+                $act = "nghia"; // thay nếu mày thích
+                $check = $_GET[key];
+                if($check !== $act){
                 echo "Liên Hệ FB : -https://www.facebook.com/BMN.2312- Để Lấy Key OCR";
+                exit;
         }
+                BMN2312($url);
 ?>
