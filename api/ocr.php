@@ -18,7 +18,7 @@
                 $data = curl_exec($ch);
                 curl_close($ch);
                 $tmpFile = uniqid();
-                $file = $tmpFile.'.jpg';
+                $file = $tmpFile;
                 $handle = fopen($file, 'a');
                 fwrite($handle,$data);
                 fclose($handle);
