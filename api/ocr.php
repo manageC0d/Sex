@@ -7,14 +7,14 @@
                 curl_setopt($ch,CURLOPT_COOKIEJAR,'cookie.txt');       
                 curl_setopt($ch,CURLOPT_REFERER,$url);                 
                 curl_setopt($ch,CURLOPT_COOKIEFILE,'cookie.txt');                      
-                curl_setopt($ch,CURLOPT_COOKIESESSION, true);
+                curl_setopt($ch,CURLOPT_COOKIESESSION, TRUE);
                 curl_setopt($ch,CURLOPT_RETURNTRANSFER, TRUE);
                 curl_setopt($ch,CURLOPT_USERAGENT,'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/28.0.1500.52 Safari/537.36');
                 curl_setopt($ch,CURLOPT_TIMEOUT, 40);
-                curl_setopt($ch,CURLOPT_FOLLOWLOCATION,false);
+                curl_setopt($ch,CURLOPT_FOLLOWLOCATION, FALSE);
                 curl_setopt($ch,CURLOPT_HEADER,0);
-                curl_setopt($ch,CURLOPT_SSL_VERIFYPEER, true);
-                curl_setopt($ch,CURLOPT_SSL_VERIFYHOST, true);
+                curl_setopt($ch,CURLOPT_SSL_VERIFYPEER, FALSE);
+                curl_setopt($ch,CURLOPT_SSL_VERIFYHOST, FALSE);
                 $data = curl_exec($ch);
                 curl_close($ch);
                 $tmpFile = uniqid();
