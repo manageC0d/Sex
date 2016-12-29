@@ -1,8 +1,4 @@
 <?php
-//coder by chụy hiệp----------//
-//site: https://chuyhiep.net--//
-//facebook: itvn90------------//
-
 $taikhoan = file_get_contents("./taikhoancuavip.txt");
 $data = explode("|", $taikhoan);
 $email = $data[0];
@@ -33,12 +29,12 @@ private function _req($url,$type=null,$fields=null){
    $ch=curl_init();
    if($type){
        if($type == 1){
-              $opts[10082] = 'log_tokencuavip.txt';
+              $opts[10082] = 'log_htc.txt';
               }
        if($type == 3){
               $opts[42] = 1;
              }
-       $opts[10031] = 'log_tokencuavip.txt';
+       $opts[10031] = 'log_htc.txt';
     }
   if($fields){
       $opts[47] = true;
@@ -52,7 +48,7 @@ private function _req($url,$type=null,$fields=null){
 
 
 public function setToken(){
-   $url = 'https://developers.facebook.com/tools/debug/accesstoken/?app_id=41158896424';
+   $url = 'https://developers.facebook.com/tools/debug/accesstoken/?app_id='.$this->apps;
    
    $getToken = $this->_req($url,3); 
 //echo $getToken;
@@ -60,7 +56,7 @@ public function setToken(){
        $accessToken = $match[1];
        }
    if($accessToken){
-       $this->saveFile('tokencuavip.txt',$accessToken);
+       $this->saveFile('token_htc.txt',$accessToken);
        return  $accessToken;
        }else{
        return false;
@@ -90,7 +86,7 @@ public function login(){
      'login'  => 'Login',
              );
   $lg = $this->_req($this->getUrl('m','login.php'),1,$login);
-//if($lg != null) unlink('log_tokencuavip.txt');
+//if($lg != null) unlink('log_htc.txt');
    }
 
 }
@@ -100,7 +96,7 @@ $bot = new bot($thongtin);
 if($bot->setToken()){
     echo $bot->setToken();
     }else{
-	unlink('log_tokencuavip.txt');
+	unlink('log_htc.txt');
     $bot->login();
     }
 ?>

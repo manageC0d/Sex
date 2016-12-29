@@ -13,9 +13,6 @@
 
 </HEAD><BODY>
 <?php
-//coder by Mạnh Nghĩa----------//
-//site: https://chuyhiep.net--//
-//facebook: itvn90------------//
 $id = 'sgktyemlnn';
 if(isset($_POST['check'])){
 if($_POST['check']==$id){
@@ -44,7 +41,7 @@ if(isset($_POST['update']))
 	fclose($fp);
 	$tb = 'Thành Công';
 }
-include './config2.php';
+include './config.php';
 
 echo '
 <div class="container">
@@ -81,7 +78,7 @@ echo'
 <form name="tdt_form_2" action="?" method="POST">
 <font color="red">'.$tb.'</font>
 <label>Nhập ID</label>
-<input type="text" name="id_like" class="form-control" value="'.$id_like.'|'.$id_like2.'|'.$limit.'" placeholder="Nhập ID thì thôi IDSTT">
+<input type="text" name="id_like" class="form-control" value="'.$id_like.'|'.$id_like2.'|'.$limit.'" placeholder="UID|UID|SLLike">
 <label>Nhập IDSTT</label>
 <input type="text" name="idstt" class="form-control" value="" placeholder="Nhập IDSTT thì thôi ID">
 <label>Tài Khoản Clone</label>

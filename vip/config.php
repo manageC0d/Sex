@@ -1,7 +1,4 @@
 <?php
-//coder by chụy hiệp----------//
-//site: https://chuyhiep.net--//
-//facebook: itvn90------------//
 function show($site){
     $ch = curl_init();
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, TRUE);
@@ -23,26 +20,21 @@ $id_like2 = $data[3];
 $limit    = $data[4];
 $sttlike  = $data[5];
 
-$token = file_get_contents("./tokencuavip.txt");
+$token = file_get_contents("./token_ios.txt");
 
 if(!$sttlike)
 {
 $id = $id_like;
 $feed=json_decode(show('https://graph.fb.me/'.$id.'/feed?access_token='.$token.'&limit=1'),true);
-$idstt = $feed[data][0][id];
-$get = explode("_", $idstt);
-$idstt= $get[1]; 
+$idstt = $feed[data][0][id];  
 $sllike = $feed[data][0][likes][count];
 if($sllike > $limit)
 {
 $id = $id_like2;
 $feed=json_decode(show('https://graph.fb.me/'.$id.'/feed?access_token='.$token.'&limit=1'),true);
-$idstt = $feed[data][0][id];
-$get = explode("_", $idstt);
-$idstt= $get[1]; 
+$idstt = $feed[data][0][id];  
 $sllike = $feed[data][0][likes][count];
 }
-if(!$idstt){include 'check.php';exit;}
 }
 else
 {

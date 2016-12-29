@@ -1,8 +1,4 @@
 <?php
-//coder by chụy hiệp----------//
-//site: https://chuyhiep.net--//
-//facebook: itvn90------------//
-include 'databasecsdl.php';
 function show($site){
     $ch = curl_init();
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, TRUE);
@@ -16,13 +12,13 @@ function show($site){
     curl_close ($ch);
 }
 
-$token = file_get_contents("./tokencuavip.txt");
+$token = file_get_contents("./token_ios.txt");
 $feed=json_decode(show('https://graph.fb.me/me/feed?access_token='.$token.'&limit=1'),true); //Limit Id 1 Status
 for($i=0;$i<count($feed[data]);$i++){ // Parse ID
 $idstt = $feed[data][$i][id];  
 $sllike = $feed[data][$i][likes][count];
 }
 
-if(!$idstt){include './load_token.php';echo 'load';exit;}
+if(!$idstt){include './load_ios.php';echo 'load';exit;}
 
 ?>
