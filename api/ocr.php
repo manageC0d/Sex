@@ -15,7 +15,6 @@
                 curl_setopt($ch,CURLOPT_HEADER,0);
                 curl_setopt($ch,CURLOPT_SSL_VERIFYPEER, false);
                 curl_setopt($ch,CURLOPT_SSL_VERIFYHOST, false);
-                curl_setopt($ch,CURLOPT_SSL_VERIFYPEER, false);
                 $data = curl_exec($ch);
                 curl_close($ch);
                 $tmpFile = uniqid();
@@ -30,6 +29,7 @@
                 unlink($tmpFile);
                 $res = file_get_contents("$tmpFile.txt");
                 unlink("$tmpFile.txt");
+				unlink("cookie.txt");
                 $capcay = trim(str_replace("\n\n","",$res,count($res)));
  
                 echo $capcay;
