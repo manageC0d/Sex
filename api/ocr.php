@@ -7,8 +7,8 @@
                 curl_setopt($ch,CURLOPT_COOKIEJAR,'cookie.txt');       
                 curl_setopt($ch,CURLOPT_REFERER,$url);                 
                 curl_setopt($ch,CURLOPT_COOKIEFILE,'cookie.txt');                      
-                curl_setopt($ch,CURLOPT_COOKIESESSION,true);
-                curl_setopt($ch,CURLOPT_RETURNTRANSFER, true);
+                curl_setopt($ch,CURLOPT_COOKIESESSION, true);
+                curl_setopt($ch,CURLOPT_RETURNTRANSFER, TRUE);
                 curl_setopt($ch,CURLOPT_REFERER,$img);
                 curl_setopt($ch,CURLOPT_USERAGENT,'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/28.0.1500.52 Safari/537.36');
                 curl_setopt($ch,CURLOPT_TIMEOUT, 40);
@@ -29,8 +29,8 @@
                 exec($cmd);
                 unlink($tmpFile);
                 $res = file_get_contents("$tmpFile.txt");
-                unlink("$tmpFile.txt");
-                unlink("cookie.txt");
+                ///unlink("$tmpFile.txt");
+                //unlink("cookie.txt");
                 $capcay = trim(str_replace("\n\n","",$res,count($res)));
  
                 echo $capcay;
