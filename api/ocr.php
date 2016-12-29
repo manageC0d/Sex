@@ -29,7 +29,6 @@
                 unlink($tmpFile);
                 $res = file_get_contents("$tmpFile.txt");
                 unlink("$tmpFile.txt");
-                //unlink("cookie.txt");
                 $capcay = trim(str_replace("\n\n","",$res,count($res)));
  
                 echo $capcay;

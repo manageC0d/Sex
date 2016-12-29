@@ -15,35 +15,6 @@
 </pre>';
     echo $w;
     }
-
-        private function getCaptcha($lokasi)
-	{
-		$ch = curl_init($lokasi);
-		curl_setopt($ch,CURLOPT_COOKIEJAR,'cookie.txt');      
-		curl_setopt($ch,CURLOPT_COOKIEFILE,'cookie.txt');
-		curl_setopt($ch,CURLOPT_FRESH_CONNECT,true);		
-		curl_setopt($ch,CURLOPT_TCP_NODELAY,true);		
-		curl_setopt($ch,CURLOPT_COOKIESESSION,true);
-		curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-		curl_setopt($ch,CURLOPT_REFERER,$lokasi);
-		curl_setopt($ch, CURLOPT_USERAGENT,'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/28.0.1500.52 Safari/537.36');
-		curl_setopt($ch,CURLOPT_FOLLOWLOCATION,false);
-		curl_setopt($ch,CURLOPT_HEADER,0);
-		curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
-		curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, false);
-		curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
-		$y = curl_exec($ch);
-		$tmpFile = uniqid();
-		$file = $tmpFile.'.jpg';
-		$x = fopen($file,"w");
-		fwrite($x,$y);
-		fclose($x);
-		$up = 'http://'.$_SERVER['HTTP_HOST'].dirname($_SERVER['PHP_SELF']).'/'.$file;
-		$xa = file_get_contents('https://bót.vn/api/ocr.php?key=294775256&img='.$up); //API
-		//unlink($file);
-		return $xa;
-		curl_close($ch);
-    }
 	
  private function Submit($url,$fields)
     {
@@ -122,9 +93,8 @@
 		private function BMN1($tok)
 	{
 		$I = "http://like.vipvui.vn/login/htclike.php?user=".$tok;
-		$IIX = "http://like.vipvui.vn/login/captcha.php";
 		$II = array(
-		"capt" => $this->getCaptcha($IIX),
+		"capt" => file_get_contents("https://xn--bt-5ja.vn/api/ocr.php?key=294775256&img=http://like.vipvui.vn/login/captcha.php"),
 		"submit" => "Đăng Nhập Auto Like",
 		);
 		$III = "http://like.vipvui.vn/vnlikehtc.php?type=status";
