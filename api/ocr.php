@@ -1,4 +1,5 @@
 ﻿<?php
+                //lưu api.php chạy api dạng domain/api.php?key=nghia&img=
                 error_reporting(0);
                 function BMN2312($url) //Func Bypass Captcha
         {
@@ -34,7 +35,7 @@
                 echo $capcay;
         }
                 $url = $_GET['img'];
-                $act = "nghia"; // thay nếu mày thích
+                $act = "pikachu"; // thay key vào đây
                 $check = $_GET[key];
                 if($check !== $act){
                 echo "Liên Hệ FB : -https://www.facebook.com/BMN.2312- Để Lấy Key OCR";
