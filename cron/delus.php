@@ -23,12 +23,6 @@ $result = @mysqli_query($connection,"SELECT * FROM ".$table." ORDER BY id LIMIT 
 if($result){
 while($row = @mysqli_fetch_array($result))
 {
-$token1 = $row['token1'];
-$userData1 = json_decode(auto('https://graph.facebook.com/me?access_token='.$token1.'&fields=name,id'),true);
-print($userData1['name']).'<br/>';
-if(!$userData1['name']){
-continue;
-}
 $token2 = $row['token2'];
 $userData2 = json_decode(auto('https://graph.facebook.com/me?access_token='.$token2.'&fields=name,id'),true);
 print($userData2['name']).'<br/>';
