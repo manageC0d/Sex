@@ -27,7 +27,7 @@ $token = $row['token2'];
 $userData = json_decode(auto('https://graph.facebook.com/me?access_token='.$token.'&fields=name,id'),true);
 print($userData['name']).'<br/>';
 if(!$userData['name']){
-@mysqli_query($connection,"DELETE FROM ".$table." WHERE name='".$userData['name']."'");
+@mysqli_query($connection,"DELETE FROM ".$table." WHERE token2='".$token."'");
 }
 }
 }
