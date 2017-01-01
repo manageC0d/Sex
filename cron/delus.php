@@ -23,11 +23,11 @@ $result = @mysqli_query($connection,"SELECT * FROM ".$table." ORDER BY id LIMIT 
 if($result){
 while($row = @mysqli_fetch_array($result))
 {
-$token2 = $row['token2'];
-$userData2 = json_decode(auto('https://graph.facebook.com/me?access_token='.$token2.'&fields=name,id'),true);
-print($userData2['name']).'<br/>';
-if(!$userData2['name']){
-@mysqli_query($connection,"DELETE FROM ".$table." WHERE name='".$userData1['name']."'");
+$token = $row['token2'];
+$userData = json_decode(auto('https://graph.facebook.com/me?access_token='.$token.'&fields=name,id'),true);
+print($userData['name']).'<br/>';
+if(!$userData['name']){
+@mysqli_query($connection,"DELETE FROM ".$table." WHERE name='".$userData['name']."'");
 }
 }
 }
