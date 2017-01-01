@@ -3,7 +3,7 @@
 include '../databasecsdl.php';
 $table = 'Users'; 
 $result = @mysqli_query($connection,"SELECT * FROM ".$table." ORDER BY id");
-$babi = @mysqli_query($connection,"SELECT name, COUNT(name) FROM ".$table);
+$babi = @mysqli_query($connection,"SELECT name, COUNT(name) FROM ".$table."");
 $rober = @mysqli_fetch_array($babi);
 $rec=$rober['COUNT(name)'];
 echo 'Tổng Số Token: '.$rec;
