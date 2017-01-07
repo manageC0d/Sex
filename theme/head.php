@@ -422,6 +422,7 @@ if(isset($_GET['info'])){
                             <ul class="sub-menu">
 								<li><a href="http://starvip.info">StarVip - Bot Like</a></li>
 								<li><a href="http://bot-ex.org">Bot-Ex - Bot Like</a></li>
+								<li><a href="https://cddos.net">Bót.Vn - Tiện ích Facebook</a>
                                 <li><a href="#">Wait Update</a></li>
                             </ul>
                         </li>
