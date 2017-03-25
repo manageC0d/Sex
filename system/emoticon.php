@@ -3,7 +3,7 @@ $emoticon = array(
      "=))" => "<img class='emoticon' src='https://xn--bt-5ja.vn/assets/emoji/rolling.gif'>",
      ":))" => "<img class='emoticon' src='https://xn--bt-5ja.vn/assets/emoji/hehe.gif'>",
      ":)" => "<img class='emoticon' src='https://xn--bt-5ja.vn/assets/emoji/smug.gif'>",
-	 ";)" => "<img class='emoticon' src='https://lh3.googleusercontent.com/XEXGvlt_tPIB8k5o9gSJRNENzteeNz2RfxpUGH6N8qu5wchV34sc-psXSxORt6Y3Y0p-oFqWgM_k=w176-h176-n-o-rw'>",
+	 ";)" => "<img class='emoticon' src='https://xn--bt-5ja.vn/assets/emoji/nhaymat.gif'>",
      ":d" => "<img class='emoticon' src='https://xn--bt-5ja.vn/assets/emoji/laughing.gif'>",
 	 ":D" => "<img class='emoticon' src='https://xn--bt-5ja.vn/assets/emoji/laughing.gif'>",
      ":p" => "<img class='emoticon' src='https://xn--bt-5ja.vn/assets/emoji/phbbt.gif'>",
