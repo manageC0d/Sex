@@ -390,6 +390,7 @@ if(isset($_GET['info'])){
                                 </li>
 								<li><a href="../tienich/google">Google Search</a></li>
 								<li><a href="../tienich/gettoken">Get Token Full Quyền</a></li>
+								<li><a href="../tienich/drive">Getlink Drive Google</a></li>
 								<li><a href="../tienich/account">Tạo Nick Facebook Ảo</a></li>
                                 <li><a href="#">Wait Update</a></li>
                             </ul>
